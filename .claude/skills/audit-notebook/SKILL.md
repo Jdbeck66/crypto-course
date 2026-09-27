@@ -9,7 +9,7 @@ Audit the notebook at $ARGUMENTS[0]:
 
 1. Execute the notebook:
    ```
-   conda run -n blockchain-module1 jupyter nbconvert --to notebook --execute $ARGUMENTS[0] --output /tmp/audit-output.ipynb
+   conda run -n crypto-course jupyter nbconvert --to notebook --execute $ARGUMENTS[0] --output /tmp/audit-output.ipynb
    ```
 
 2. If execution fails:

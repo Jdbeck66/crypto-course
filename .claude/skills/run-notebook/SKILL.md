@@ -11,7 +11,7 @@ Execute a notebook and display results without full quality audit.
 
 1. Execute the notebook:
    ```
-   mamba run -n blockchain-module1 jupyter nbconvert --to notebook --execute $ARGUMENTS[0] --output /tmp/run-output.ipynb --ExecutePreprocessor.timeout=300 2>&1
+   mamba run -n crypto-course jupyter nbconvert --to notebook --execute $ARGUMENTS[0] --output /tmp/run-output.ipynb --ExecutePreprocessor.timeout=300 2>&1
    ```
 
 2. If successful:

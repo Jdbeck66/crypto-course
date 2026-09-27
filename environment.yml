@@ -1,7 +1,6 @@
-name: blockchain-module1
+name: crypto-course
 channels:
   - conda-forge
-  - defaults
 dependencies:
   # Python version
   - python=3.11

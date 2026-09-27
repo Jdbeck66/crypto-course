@@ -3,7 +3,10 @@
     "allow": [
       "Bash(mamba env:*)",
       "Bash(conda run:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(ls -la notebooks/14-*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

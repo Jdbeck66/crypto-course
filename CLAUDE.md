@@ -8,7 +8,7 @@ Course reference: MIT Sloan Blockchain and Crypto Applications Online Short Cour
 
 ## Environment
 
-- **Conda env:** `blockchain-module1` (activate with `mamba activate blockchain-module1`)
+- **Conda env:** `crypto-course` (activate with `mamba activate crypto-course`)
 - **Prefer mamba** over conda for all package/environment operations
 - **Python:** 3.11
 - **Environment file:** `environment.yml` at project root
@@ -91,3 +91,7 @@ Cryptocurrency/
 | 14 | consensus-simulations.ipynb | Complete |
 | 15 | multichain-analysis.ipynb | Complete |
 | 16 | energy-sustainability.ipynb | Complete |
+
+## Notes outside the repo
+
+The Obsidian hub note for this project is `~/Notes/Projects/crypto-course.md` (the vault is on Google Drive; `~/Notes` is a symlink). Read it at session start for meeting notes, decisions made outside the code, and current status. Append a dated line to its "Status log" when a session changes the state of the project. Repo docs stay here; thinking, meetings, and cross-project notes go there.

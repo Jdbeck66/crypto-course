@@ -34,7 +34,7 @@ Create a new Jupyter notebook at `notebooks/$ARGUMENTS[0]-$ARGUMENTS[1].ipynb`.
    - Next Steps with links to the next notebook and relevant sections
 
 ## Standards
-- All code must run in the `blockchain-module1` conda environment
+- All code must run in the `crypto-course` conda environment
 - Use type hints in function signatures
 - Include docstrings for all functions
 - Print clear, formatted output with labels

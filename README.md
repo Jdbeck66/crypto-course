@@ -141,7 +141,7 @@ Examine the environmental impact of blockchain systems.
 mamba env create -f environment.yml
 
 # Activate
-conda activate blockchain-module1
+conda activate crypto-course
 
 # Launch Jupyter Lab
 jupyter lab
@@ -171,8 +171,8 @@ mamba env create -f environment.yml
 
 **Jupyter kernel not found:**
 ```bash
-conda activate blockchain-module1
-python -m ipykernel install --user --name blockchain-module1 --display-name "Python (Blockchain)"
+conda activate crypto-course
+python -m ipykernel install --user --name crypto-course --display-name "Python (Blockchain)"
 ```
 
 ---

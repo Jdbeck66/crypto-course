@@ -11,7 +11,7 @@ Batch-audit all notebooks in the `notebooks/` directory.
 1. Get the list of all `.ipynb` files in `notebooks/`, sorted by number
 2. For each notebook, execute it:
    ```
-   mamba run -n blockchain-module1 jupyter nbconvert --to notebook --execute "notebooks/$FILE" --output /tmp/audit-$(basename $FILE) --ExecutePreprocessor.timeout=300
+   mamba run -n crypto-course jupyter nbconvert --to notebook --execute "notebooks/$FILE" --output /tmp/audit-$(basename $FILE) --ExecutePreprocessor.timeout=300
    ```
 3. Track results: pass or fail with error summary
 4. After all notebooks run, print a summary table:

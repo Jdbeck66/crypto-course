@@ -1,3 +1,4 @@
+# Env for the crypto course notebooks (web3, bitcoin libs). Rebuild: mamba env create -f environment.yml; exact versions in environment.lock.yml
 name: crypto-course
 channels:
   - conda-forge

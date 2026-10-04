@@ -94,4 +94,8 @@ Cryptocurrency/
 
 ## Notes outside the repo
 
-The Obsidian hub note for this project is `~/Notes/1-Projects/crypto-course/crypto-course.md` (the vault is on Google Drive; `~/Notes` is a symlink). Read it at session start for meeting notes, decisions made outside the code, and current status. Append a dated line to its "Status log" when a session changes the state of the project. Repo docs stay here; thinking, meetings, and cross-project notes go there.
+The Obsidian hub note for this project is `~/Notes/1-Projects/crypto-course/crypto-course.md` (the vault is on Google Drive; `~/Notes` is a symlink). This repo is the project's home and the hub note is a pointer to it ("How I Work"). Everything about the project lives here: decisions, progress, working notes, paper notes, and research output. Do not copy repo content into the vault. The vault keeps only what cannot sensibly live in git, chiefly meeting notes and anything about people; ask before writing anything else there.
+
+- At session start, read the hub note and its latest meeting note; carry any new decision into this repo's records.
+- When a session changes the state of the project, append one line to the hub's Status log, `- YYYY-MM-DD: sentence; next: sentence.`, citing this repo's decision numbers rather than restating them, and bump `updated`.
+- Keep the hub's "Where things live" links current when key files are added or renamed.

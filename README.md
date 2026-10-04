@@ -2,7 +2,7 @@
 
 ## Overview
 
-A comprehensive exploration of the cryptocurrency ecosystem, from the origins of Bitcoin through Ethereum, smart contracts, DeFi, NFTs, and Web 3. Combines theoretical understanding with hands-on computational analysis using Python and Jupyter Lab.
+A comprehensive exploration of the cryptocurrency ecosystem, from the origins of Bitcoin through Ethereum, smart contracts, decentralized finance (DeFi), non-fungible tokens (NFTs), and Web 3. Combines theoretical understanding with hands-on computational analysis using Python and Jupyter Lab.
 
 **Based on:** MIT Sloan School of Management - Blockchain and Crypto Applications Course
 
@@ -35,7 +35,7 @@ Trace the complete history of cryptocurrency from the 1990s Cypherpunk movement 
 ### 02: Bitcoin Deep Dive - Technical Architecture & Economics
 **File:** `sections/02-bitcoin-deep-dive.md`
 
-Master Bitcoin's technical architecture including the UTXO model, Proof-of-Work mining, difficulty adjustment, and transaction structure. Explore Bitcoin's economic model with its fixed 21 million supply, halving schedule, and fee markets.
+Master Bitcoin's technical architecture including the unspent transaction output (UTXO) model, Proof-of-Work mining, difficulty adjustment, and transaction structure. Explore Bitcoin's economic model with its fixed 21 million supply, halving schedule, and fee markets.
 
 **Key Topics:** Blockchain structure and Merkle trees, UTXO model vs. account-based systems, mining and difficulty adjustment, fixed supply economics and halvings, transaction fees, scalability challenges, Lightning Network
 
@@ -44,9 +44,9 @@ Master Bitcoin's technical architecture including the UTXO model, Proof-of-Work 
 ### 03: Ethereum & Smart Contracts - Programmable Blockchains
 **File:** `sections/03-ethereum-smart-contracts.md`
 
-Dive deep into Ethereum's architecture, the EVM, and Solidity programming. Learn how smart contracts enable decentralized applications, token standards, and DeFi primitives.
+Dive deep into Ethereum's architecture, the Ethereum Virtual Machine (EVM), and Solidity programming. Learn how smart contracts enable decentralized applications, token standards, and DeFi primitives.
 
-**Key Topics:** Ethereum architecture and account model, EVM and gas mechanism, Solidity programming, token standards (ERC-20, ERC-721, ERC-1155), DeFi building blocks, The Merge (PoW to PoS), Layer 2 scaling
+**Key Topics:** Ethereum architecture and account model, EVM and gas mechanism, Solidity programming, Ethereum Request for Comments (ERC) token standards (ERC-20, ERC-721, ERC-1155), DeFi building blocks, The Merge from proof of work (PoW) to proof of stake (PoS), Layer 2 scaling
 
 ---
 
@@ -55,7 +55,7 @@ Dive deep into Ethereum's architecture, the EVM, and Solidity programming. Learn
 
 Understand the economic principles underlying blockchain systems: game theory, incentive design, mechanism design, tokenomics, and valuation frameworks.
 
-**Key Topics:** Cryptoeconomic principles, game theory in consensus protocols, tokenomics (supply curves, inflation/deflation, distribution), staking economics, valuation frameworks (NVT, Stock-to-Flow), market structure
+**Key Topics:** Cryptoeconomic principles, game theory in consensus protocols, tokenomics (supply curves, inflation/deflation, distribution), staking economics, valuation frameworks (network value to transactions (NVT), Stock-to-Flow), market structure
 
 ---
 
@@ -64,7 +64,7 @@ Understand the economic principles underlying blockchain systems: game theory, i
 
 Compare blockchain platforms and consensus mechanisms. Analyze the blockchain trilemma trade-offs and Layer 2 scaling approaches.
 
-**Key Topics:** Consensus mechanisms (PoW, PoS, DPoS, BFT), blockchain trilemma, Layer 1 comparison (Ethereum, Solana, Cardano, Avalanche, Polkadot, Cosmos), Layer 2 solutions, modular architecture, performance metrics
+**Key Topics:** Consensus mechanisms (PoW, PoS, delegated proof of stake (DPoS), Byzantine fault tolerance (BFT)), blockchain trilemma, Layer 1 comparison (Ethereum, Solana, Cardano, Avalanche, Polkadot, Cosmos), Layer 2 solutions, modular architecture, performance metrics
 
 ---
 
@@ -73,7 +73,7 @@ Compare blockchain platforms and consensus mechanisms. Analyze the blockchain tr
 
 Explore privacy in blockchain systems, blockchain analysis techniques, and privacy-enhancing technologies.
 
-**Key Topics:** Pseudonymity vs. anonymity, blockchain forensics, CoinJoin, ring signatures, stealth addresses, zero-knowledge proofs (zk-SNARKs, zk-STARKs), privacy coins (Monero, Zcash), regulatory challenges
+**Key Topics:** Pseudonymity vs. anonymity, blockchain forensics, CoinJoin, ring signatures, stealth addresses, zero-knowledge proofs (zero-knowledge succinct non-interactive arguments of knowledge (zk-SNARKs), zero-knowledge scalable transparent arguments of knowledge (zk-STARKs)), privacy coins (Monero, Zcash), regulatory challenges
 
 ---
 
@@ -82,14 +82,14 @@ Explore privacy in blockchain systems, blockchain analysis techniques, and priva
 
 Study stablecoins and their mechanisms for maintaining price stability.
 
-**Key Topics:** Stablecoin categories (fiat-backed, crypto-backed, algorithmic), peg maintenance, use cases, risks and depegging events, case studies (USDC, DAI, Terra/UST collapse)
+**Key Topics:** Stablecoin categories (fiat-backed, crypto-backed, algorithmic), peg maintenance, use cases, risks and depegging events, case studies (USD Coin (USDC), DAI, Terra and TerraUSD (UST) collapse)
 
 ---
 
 ### 08: DAO Governance - Decentralized Organizations
 **File:** `sections/08-dao-governance.md`
 
-Understand DAOs and on-chain governance mechanisms.
+Understand decentralized autonomous organizations (DAOs) and on-chain governance mechanisms.
 
 **Key Topics:** DAO fundamentals, governance mechanisms (token voting, quadratic voting, delegation), DAO frameworks, governance challenges, legal considerations, case studies (MakerDAO, Compound, Uniswap)
 
@@ -108,20 +108,20 @@ Examine the environmental impact of blockchain systems.
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | `cryptographic-primitives` | Hash functions, ECDSA key pairs, digital signatures, Merkle trees, proof-of-work |
+| 01 | `cryptographic-primitives` | Hash functions, Elliptic Curve Digital Signature Algorithm (ECDSA) key pairs, digital signatures, Merkle trees, proof-of-work |
 | 02 | `bitcoin-blockchain-analysis` | Node connections, block/transaction parsing, UTXO analysis, network metrics |
-| 03 | `ethereum-evm-analysis` | Web3.py node interaction, EVM bytecode/opcode decoding, gas analysis, EIP-1559 simulation |
+| 03 | `ethereum-evm-analysis` | Web3.py node interaction, EVM bytecode/opcode decoding, gas analysis, Ethereum Improvement Proposal 1559 (EIP-1559) simulation |
 | 04 | `smart-contract-development` | Solidity ERC-20/721, deployment to testnet, security analysis, Governor contracts |
-| 05 | `defi-protocols` | AMM simulators, lending mechanics, liquidation, impermanent loss, flash loans |
-| 06 | `market-analysis` | Price data APIs, technical indicators, on-chain metrics, portfolio optimization |
+| 05 | `defi-protocols` | Automated market maker (AMM) simulators, lending mechanics, liquidation, impermanent loss, flash loans |
+| 06 | `market-analysis` | Price data application programming interfaces (APIs), technical indicators, on-chain metrics, portfolio optimization |
 | 07 | `mining-economics` | Profitability calculator, difficulty simulation, pool rewards, 51% attack costs |
 | 08 | `valuation-models` | Stock-to-Flow, Metcalfe's Law, NVT ratio, Monte Carlo simulations |
-| 09 | `privacy-forensics` | Address clustering, transaction graphs, ZKP basics, mixing detection, taint analysis |
+| 09 | `privacy-forensics` | Address clustering, transaction graphs, zero-knowledge proof (ZKP) basics, mixing detection, taint analysis |
 | 10 | `cryptoeconomic-modeling` | Game theory, Nash equilibrium, mechanism design, staking economics, validator yields |
 | 11 | `tokenomics` | Supply curves, inflation/deflation, vesting schedules, bonding curves |
 | 12 | `governance-simulation` | Quadratic voting, conviction voting, governance attacks, treasury analysis |
 | 13 | `stablecoin-analysis` | Peg stability tracking, Terra/UST death spiral simulation, reserve modeling |
-| 14 | `consensus-simulations` | PoW/PoS simulators, PBFT, fork choice rules, finality analysis |
+| 14 | `consensus-simulations` | PoW/PoS simulators, Practical Byzantine Fault Tolerance (PBFT), fork choice rules, finality analysis |
 | 15 | `multichain-analysis` | Throughput benchmarks, cost analysis, decentralization metrics |
 | 16 | `energy-sustainability` | Energy consumption estimation, carbon footprint, PoW vs. PoS comparison |
 

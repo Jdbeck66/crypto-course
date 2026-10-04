@@ -59,7 +59,7 @@ The concept of decentralized organizations was discussed by Vitalik Buterin as e
 
 > **Definition: The DAO**
 >
-> "The DAO" was the first major DAO experiment, launched on Ethereum in April 2016. It functioned as a decentralized venture capital fund where token holders could vote on which projects to fund. It raised approximately 12.7 million ETH (around $150 million at the time), making it the largest crowdfunding event in history at that point. In June 2016, an attacker exploited a reentrancy vulnerability in its smart contract code and drained approximately 3.6 million ETH. The Ethereum community's response — a hard fork to reverse the hack — led to the permanent split between Ethereum (ETH) and Ethereum Classic (ETC).
+> "The DAO" was the first major DAO experiment, launched on Ethereum in April 2016. It functioned as a decentralized venture capital fund where token holders could vote on which projects to fund. It raised approximately 12.7 million ether (ETH; around $150 million at the time), making it the largest crowdfunding event in history at that point. In June 2016, an attacker exploited a reentrancy vulnerability in its smart contract code and drained approximately 3.6 million ETH. The Ethereum community's response — a hard fork to reverse the hack — led to the permanent split between Ethereum (ETH) and Ethereum Classic (ETC).
 
 **Source:** Dupont, Q. (2017). Experiments in Algorithmic Governance: A History and Ethnography of "The DAO," a Failed Decentralized Autonomous Organization. In Bitcoin and Beyond. Routledge.
 
@@ -69,17 +69,17 @@ The concept of decentralized organizations was discussed by Vitalik Buterin as e
 |------|-----------|
 | 2013 | Vitalik Buterin discusses DAOs in Ethereum whitepaper |
 | 2016 | The DAO launches and is exploited; Ethereum hard fork |
-| 2017-2018 | DAO concept dormant during ICO era; regulatory uncertainty |
+| 2017-2018 | DAO concept dormant during initial coin offering (ICO) era; regulatory uncertainty |
 | 2019 | Moloch DAO launches with "rage quit" mechanism |
 | 2019 | Aragon and DAOstack provide DAO creation frameworks |
-| 2020 | Compound launches COMP governance token; "governance mining" begins |
-| 2020 | Uniswap airdrops UNI token to past users; largest governance token airdrop |
-| 2020-2021 | DeFi protocols widely adopt DAO governance (Aave, Yearn, Sushi) |
+| 2020 | Compound launches Compound (COMP) governance token; "governance mining" begins |
+| 2020 | Uniswap airdrops Uniswap (UNI) token to past users; largest governance token airdrop |
+| 2020-2021 | Decentralized finance (DeFi) protocols widely adopt DAO governance (Aave, Yearn, Sushi) |
 | 2021 | ConstitutionDAO raises $47M to bid on a copy of the U.S. Constitution |
 | 2021 | Wyoming passes DAO LLC legislation |
-| 2021 | Nouns DAO launches with daily NFT auctions |
-| 2022 | OOKI DAO enforcement action by CFTC |
-| 2023 | Arbitrum DAO launches with ARB airdrop |
+| 2021 | Nouns DAO launches with daily non-fungible token (NFT) auctions |
+| 2022 | OOKI DAO enforcement action by Commodity Futures Trading Commission (CFTC) |
+| 2023 | Arbitrum DAO launches with Arbitrum (ARB) airdrop |
 | 2024-2025 | Maturation: SubDAOs, legal wrappers, and professionalized governance |
 
 ### 8.1.4 Types of DAOs
@@ -98,7 +98,7 @@ DAOs have diversified well beyond their origins as decentralized venture funds. 
 
 **Collector DAOs:** Pool resources to acquire digital or physical assets, particularly NFTs and cultural artifacts. Examples: PleasrDAO (acquired the Wu-Tang Clan album "Once Upon a Time in Shaolin"), Flamingo DAO, ConstitutionDAO.
 
-**Grants DAOs:** Distribute funding to support ecosystem development. Often created by protocol DAOs to fund public goods and builders. Examples: Gitcoin Grants, Uniswap Grants Program, Optimism RetroPGF (Retroactive Public Goods Funding).
+**Grants DAOs:** Distribute funding to support ecosystem development. Often created by protocol DAOs to fund public goods and builders. Examples: Gitcoin Grants, Uniswap Grants Program, Optimism Retroactive Public Goods Funding (RetroPGF).
 
 ---
 
@@ -359,10 +359,10 @@ Informal Discussion --> Temperature Check --> Formal Proposal --> Voting --> Tim
 1. A space admin creates a proposal with a specific snapshot block number
 2. The snapshot block determines which token balances count for voting
 3. Voters sign their vote using their wallet (no gas required)
-4. Signed votes are stored on IPFS (InterPlanetary File System), providing decentralized storage
+4. Signed votes are stored on InterPlanetary File System (IPFS), providing decentralized storage
 5. Results are tallied based on the voting strategy configured for the space
 
-Snapshot supports numerous voting strategies including token-weighted, quadratic, approval voting, ranked choice, and weighted voting (voters can split their voting power across multiple options). Custom strategies can combine multiple token balances, NFT holdings, and LP (Liquidity Provider) positions.
+Snapshot supports numerous voting strategies including token-weighted, quadratic, approval voting, ranked choice, and weighted voting (voters can split their voting power across multiple options). Custom strategies can combine multiple token balances, NFT holdings, and Liquidity Provider (LP) positions.
 
 As of 2025, Snapshot has hosted votes for over 30,000 DAO spaces and processed millions of votes, making it the dominant off-chain governance platform.
 
@@ -395,7 +395,7 @@ GovernorCore
   |-- GovernorSettings (configurable parameters)
 ```
 
-This modular design allows DAOs to mix and match governance components. A DAO might use `GovernorVotes` with an ERC-20 token, set quorum at 4% using `GovernorVotesQuorumFraction`, and add a 48-hour timelock using `GovernorTimelockControl`.
+This modular design allows DAOs to mix and match governance components. A DAO might use `GovernorVotes` with an Ethereum Request for Comments 20 (ERC-20) token, set quorum at 4% using `GovernorVotesQuorumFraction`, and add a 48-hour timelock using `GovernorTimelockControl`.
 
 > **Notebook Reference:** See `notebooks/04-smart-contract-development.ipynb` (upcoming) for examples of deploying and interacting with governance contracts, including Governor and Timelock implementations.
 
@@ -449,7 +449,7 @@ Setting quorum too low allows a small group to capture governance. A quorum of 1
 | Uniswap | 4% of total UNI supply (~40M UNI) | 1 billion UNI total |
 | Compound | 4% of total COMP supply (~400K COMP) | 10 million COMP total |
 | Aave | 2% of total AAVE supply (for standard proposals) | 16 million AAVE total |
-| ENS | 1% of total ENS supply | 100 million ENS total |
+| Ethereum Name Service (ENS) | 1% of total ENS supply | 100 million ENS total |
 
 Some DAOs implement **dynamic quorum** (also called "adjusted quorum"), where the quorum threshold changes based on the controversy of a proposal. If a proposal has many "Against" votes, the quorum requirement increases, making it harder for contentious proposals to pass with minimal participation.
 
@@ -541,12 +541,12 @@ In 2020, Beanstalk (a stablecoin protocol) suffered a governance attack where an
 
 **Vote Buying and Bribery:**
 
-The concept of a "DarkDAO" was proposed by researchers at Cornell, describing a decentralized application that could buy votes in a way that is undetectable on-chain. Using trusted execution environments (e.g., Intel SGX), a DarkDAO could:
+The concept of a "DarkDAO" was proposed by researchers at Cornell, describing a decentralized application that could buy votes in a way that is undetectable on-chain. Using trusted execution environments (e.g., Intel Software Guard Extensions (SGX)), a DarkDAO could:
 1. Offer to pay token holders for delegating their voting power
 2. Use trusted hardware to prove that the vote was cast as directed
 3. Make the bribery transaction invisible to outside observers
 
-While no large-scale DarkDAO has been documented in practice, platforms like Votium enable explicit vote-buying for Curve gauge weights, where protocols pay CRV (Curve DAO Token) and CVX (Convex Finance Token) holders to direct liquidity emissions to specific pools. This is often described as legitimate "vote incentives" rather than bribery, but the mechanism is structurally identical.
+While no large-scale DarkDAO has been documented in practice, platforms like Votium enable explicit vote-buying for Curve gauge weights, where protocols pay Curve DAO Token (CRV) and Convex Finance Token (CVX) holders to direct liquidity emissions to specific pools. This is often described as legitimate "vote incentives" rather than bribery, but the mechanism is structurally identical.
 
 **Source:** Daian, P. et al. (2018). On-Chain Vote Buying and the Rise of Dark DAOs. https://hackingdistributed.com/2018/07/02/on-chain-vote-buying/
 
@@ -623,7 +623,7 @@ Each of these parameters, if set to a malicious value by a compromised governanc
 
 > **Definition: MakerDAO**
 >
-> MakerDAO is the protocol behind DAI, a decentralized stablecoin soft-pegged to the US dollar. DAI is generated by users who deposit collateral (ETH, WBTC, real-world assets, etc.) into Maker Vaults and borrow DAI against it. MKR token holders govern the protocol, voting on critical parameters such as which collateral types to accept, stability fees (interest rates), and the DAI Savings Rate. MakerDAO is one of the oldest and most actively governed DAOs in DeFi (Decentralized Finance).
+> MakerDAO is the protocol behind DAI, a decentralized stablecoin soft-pegged to the US dollar. DAI is generated by users who deposit collateral (ETH, Wrapped Bitcoin (WBTC), real-world assets, etc.) into Maker Vaults and borrow DAI against it. Maker (MKR) token holders govern the protocol, voting on critical parameters such as which collateral types to accept, stability fees (interest rates), and the DAI Savings Rate. MakerDAO is one of the oldest and most actively governed DAOs in DeFi (Decentralized Finance).
 
 **Governance structure:**
 
@@ -637,9 +637,9 @@ In MakerDAO's executive voting system, governance changes are enacted when the n
 
 | Decision | Impact | Year |
 |----------|--------|------|
-| Multi-Collateral DAI launch | Expanded collateral beyond ETH to include WBTC, USDC, and others | 2019 |
+| Multi-Collateral DAI launch | Expanded collateral beyond ETH to include WBTC, USD Coin (USDC), and others | 2019 |
 | Adding USDC as collateral | Controversial: introduced centralized asset exposure but stabilized DAI peg during March 2020 crash | 2020 |
-| Real-World Asset (RWA) collateral | MakerDAO began accepting tokenized real-world assets (US Treasury bonds, real estate) as collateral, bridging DeFi and TradFi | 2022-2023 |
+| Real-World Asset (RWA) collateral | MakerDAO began accepting tokenized real-world assets (US Treasury bonds, real estate) as collateral, bridging DeFi and traditional finance (TradFi) | 2022-2023 |
 | Spark Protocol launch | MakerDAO launched its own lending protocol (Spark) to directly offer DAI lending and borrowing | 2023 |
 | "EndGame" plan | Comprehensive restructuring into SubDAOs, each with its own token and governance, designed to make Maker more resilient and scalable | 2023-2025 |
 | Rebrand to Sky | MakerDAO rebranded its protocol to "Sky" with the governance token renamed from MKR to SKY and DAI to USDS | 2024 |
@@ -654,7 +654,7 @@ In 2022, MakerDAO co-founder Rune Christensen proposed the "EndGame" plan, a rad
 - The goal is to reduce governance complexity by distributing decisions to specialized units
 
 **Lessons from MakerDAO:**
-- Active governance can manage a protocol with billions of dollars in TVL (Total Value Locked)
+- Active governance can manage a protocol with billions of dollars in Total Value Locked (TVL)
 - Real-world impact: MakerDAO governance directly controls the stability of a multi-billion dollar stablecoin
 - Governance fatigue is real: MakerDAO has experienced periods of voter apathy despite the stakes
 - The EndGame plan illustrates the tension between decentralization ideals and operational efficiency
@@ -689,7 +689,7 @@ As of early 2025, the fee switch remains partially activated after years of deba
 
 **Cross-chain deployment governance:**
 
-Uniswap governance has also grappled with cross-chain deployment decisions. As Uniswap expanded beyond Ethereum to L2s (Layer 2 networks) and other chains, governance proposals debated:
+Uniswap governance has also grappled with cross-chain deployment decisions. As Uniswap expanded beyond Ethereum to Layer 2 networks (L2s) and other chains, governance proposals debated:
 - Which chains to deploy on (BSC, Polygon, Arbitrum, Optimism, Base, Avalanche, etc.)
 - Which bridge provider to use for cross-chain governance messages
 - Whether to provide liquidity incentives on new deployments
@@ -748,7 +748,7 @@ The timeline exposed the limitations of governance-controlled smart contracts:
 3. Approximately $80 million worth of COMP was incorrectly distributed
 4. A fix (Proposal 63) was submitted but required going through the full governance process (voting period + timelock), taking nearly a week
 5. During that week, the protocol continued to incorrectly distribute COMP
-6. Compound's founder publicly asked recipients to return the excess COMP, warning that those who did not might be reported to the IRS (Internal Revenue Service)
+6. Compound's founder publicly asked recipients to return the excess COMP, warning that those who did not might be reported to the Internal Revenue Service (IRS)
 
 **Lessons from Compound:**
 - Governance-controlled smart contracts mean that even acknowledged bugs require governance to fix
@@ -774,7 +774,7 @@ The timeline exposed the limitations of governance-controlled smart contracts:
 5. 100% of the winning bid (in ETH) goes to the Nouns DAO treasury
 6. Every 10th Noun (Noun 0, 10, 20, ...) is automatically sent to the Nounders (no auction)
 
-This mechanism creates a steadily growing treasury funded by continuous community interest, without the typical VC (Venture Capital) funding, token sales, or pre-mines common in other DAOs.
+This mechanism creates a steadily growing treasury funded by continuous community interest, without the typical Venture Capital (VC) funding, token sales, or pre-mines common in other DAOs.
 
 **"Nounish" governance innovations:**
 
@@ -891,10 +891,10 @@ DAOs increasingly adopt legal structures ("wrappers") to interface with the trad
 | **Foundation** | Cayman Islands, Switzerland, Singapore | Non-profit structure; can hold assets and enter contracts | Uniswap Foundation, Lido |
 | **Association** | Switzerland (Verein) | Membership-based; suitable for community DAOs | Various Swiss-based DAOs |
 | **Non-Profit LLC** | Marshall Islands | DAO-specific legislation; limited liability | MIDAO registrants |
-| **UNA (Unincorporated Non-profit Association)** | Various US states | Flexible; can be adopted without state filing | ENS DAO |
+| **Unincorporated Non-profit Association (UNA)** | Various US states | Flexible; can be adopted without state filing | ENS DAO |
 
 **The Cayman Foundation model** has become particularly popular for large protocol DAOs:
-- The foundation is a legal entity that can hold IP (Intellectual Property), enter contracts, and employ staff
+- The foundation is a legal entity that can hold Intellectual Property (IP), enter contracts, and employ staff
 - The foundation's directors are instructed to follow the outcomes of DAO governance votes
 - This creates a legal bridge: the DAO votes, and the foundation executes in the legal world
 - The foundation provides limited liability protection for DAO participants
@@ -955,7 +955,7 @@ Many DAOs use a hybrid structure where governance votes approve decisions and a 
 ### 8.7.5 Identity and Reputation
 
 - **Ethereum Name Service (ENS):** Human-readable names (e.g., vitalik.eth) that serve as identity anchors across the ecosystem
-- **Gitcoin Passport:** Sybil resistance tool that aggregates identity "stamps" from Web2 (Twitter, Google) and Web3 (on-chain activity, POAPs) sources to generate a humanity score
+- **Gitcoin Passport:** Sybil resistance tool that aggregates identity "stamps" from Web2 (Twitter, Google) and Web3 (on-chain activity, Proof of Attendance Protocol badges (POAPs)) sources to generate a humanity score
 - **Ethereum Attestation Service (EAS):** Protocol for creating, storing, and verifying attestations about addresses (skills, contributions, membership)
 - **Proof of Attendance Protocol (POAP):** NFTs distributed at events that serve as on-chain proof of participation
 
@@ -982,7 +982,7 @@ The limitations of token-weighted voting have driven interest in reputation-base
 | **Capital efficiency** | Low (tokens locked in governance) | High (no capital required) |
 | **Examples** | Most DeFi DAOs | Optimism Citizens' House, some SubDAOs |
 
-Optimism's governance is a notable hybrid: it has both a **Token House** (token-weighted voting by OP holders) and a **Citizens' House** (one-person-one-vote for citizens who receive non-transferable attestations). The Token House governs protocol upgrades and incentive distribution, while the Citizens' House governs Retroactive Public Goods Funding (RetroPGF). This bicameral structure attempts to balance the strengths of token-based and reputation-based governance.
+Optimism's governance is a notable hybrid: it has both a **Token House** (token-weighted voting by Optimism (OP) token holders) and a **Citizens' House** (one-person-one-vote for citizens who receive non-transferable attestations). The Token House governs protocol upgrades and incentive distribution, while the Citizens' House governs Retroactive Public Goods Funding (RetroPGF). This bicameral structure attempts to balance the strengths of token-based and reputation-based governance.
 
 ### 8.8.2 Progressive Decentralization
 
@@ -1021,7 +1021,7 @@ SubDAO design requires careful attention to:
 The intersection of artificial intelligence and DAO governance is an emerging frontier:
 
 **Current applications:**
-- **Proposal analysis:** AI tools that summarize complex proposals, identify potential risks, and compare proposed parameter changes to historical data
+- **Proposal analysis:** Artificial intelligence (AI) tools that summarize complex proposals, identify potential risks, and compare proposed parameter changes to historical data
 - **Voting assistants:** AI agents that recommend voting positions based on a delegate's stated principles and past voting patterns
 - **Treasury management:** AI-driven strategies for managing DAO treasury assets (yield optimization, diversification)
 
@@ -1123,6 +1123,6 @@ The following notebooks provide hands-on implementations of concepts covered in 
 - **`notebooks/12-governance-simulation.ipynb`** (upcoming) — Simulate and analyze DAO governance mechanisms:
   - **Quadratic voting simulator:** Implement the quadratic voting formula and compare outcomes against token-weighted voting for a set of proposals. Visualize how different token distributions affect governance outcomes under each mechanism.
   - **Conviction voting model:** Build a conviction voting simulator that models how conviction accumulates over time and how the trigger threshold varies with the size of the funding request. Explore the effects of the decay parameter (alpha) on governance dynamics.
-  - **Voter power analysis:** Fetch on-chain governance data from Compound or Uniswap using The Graph or direct RPC (Remote Procedure Call) queries. Calculate the Gini coefficient of voting power distribution, identify the number of addresses needed to reach quorum, and visualize delegation networks.
+  - **Voter power analysis:** Fetch on-chain governance data from Compound or Uniswap using The Graph or direct Remote Procedure Call (RPC) queries. Calculate the Gini coefficient of voting power distribution, identify the number of addresses needed to reach quorum, and visualize delegation networks.
   - **Governance attack simulation:** Model a flash loan voting attack and demonstrate how snapshot-based voting and timelocks mitigate it. Simulate vote-buying scenarios and calculate the cost of governance capture for real protocols.
   - **Treasury analysis:** Query DAO treasury balances and historical spending. Model treasury runway under different spending scenarios and visualize treasury diversification strategies.

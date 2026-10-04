@@ -135,7 +135,7 @@ Despite this, address reuse remains common. Some users share a single address pu
 
 ### 6.2.3 Change Address Analysis
 
-Bitcoin's Unspent Transaction Output (UTXO) model creates a privacy leak through change outputs. When a user wants to send 1 BTC but their wallet contains a UTXO worth 5 BTC, the transaction must spend the entire 5 BTC UTXO, sending 1 BTC to the recipient and returning approximately 4 BTC (minus fees) to a change address controlled by the sender.
+Bitcoin's Unspent Transaction Output (UTXO) model creates a privacy leak through change outputs. When a user wants to send 1 bitcoin (BTC) but their wallet contains a UTXO worth 5 BTC, the transaction must spend the entire 5 BTC UTXO, sending 1 BTC to the recipient and returning approximately 4 BTC (minus fees) to a change address controlled by the sender.
 
 > **Definition: Change Address**
 >
@@ -145,7 +145,7 @@ Bitcoin's Unspent Transaction Output (UTXO) model creates a privacy leak through
 
 1. **Round number heuristic:** If one output is a round number (e.g., 1.0000 BTC) and the other is not (e.g., 3.7823 BTC), the round number is likely the payment and the non-round number is likely the change.
 
-2. **Address type matching:** If the inputs use a specific address type (e.g., SegWit) and one output matches that type while the other does not, the matching output is likely the change.
+2. **Address type matching:** If the inputs use a specific address type (e.g., Segregated Witness (SegWit)) and one output matches that type while the other does not, the matching output is likely the change.
 
 3. **Wallet fingerprinting:** Different wallet software creates change outputs in predictable positions (first or second output) and uses characteristic fee estimation algorithms.
 
@@ -174,7 +174,7 @@ By applying this heuristic across all transactions in the blockchain, analysts c
 
 ### 6.2.5 IP Address Correlation
 
-When a user broadcasts a transaction, the transaction propagates through the Bitcoin peer-to-peer network. The first node to relay a transaction to an observer's monitoring nodes is likely the originator or closely connected to the originator. By running many listening nodes across the network, an analyst can correlate transactions with IP addresses.
+When a user broadcasts a transaction, the transaction propagates through the Bitcoin peer-to-peer network. The first node to relay a transaction to an observer's monitoring nodes is likely the originator or closely connected to the originator. By running many listening nodes across the network, an analyst can correlate transactions with Internet Protocol (IP) addresses.
 
 **Countermeasures:**
 - Using Tor or a Virtual Private Network (VPN) to mask IP addresses
@@ -207,9 +207,9 @@ A multi-billion-dollar industry has emerged around blockchain surveillance. Thes
 
 | Company | Founded | Key Clients | Capabilities |
 |---------|---------|-------------|-------------|
-| Chainalysis | 2014 | US government agencies (IRS, FBI, DEA), financial institutions | Real-time monitoring, investigation tools, compliance screening |
+| Chainalysis | 2014 | US government agencies (Internal Revenue Service (IRS), Federal Bureau of Investigation (FBI), Drug Enforcement Administration (DEA)), financial institutions | Real-time monitoring, investigation tools, compliance screening |
 | Elliptic | 2013 | Financial institutions, crypto exchanges | Risk scoring, sanctions screening, cross-chain tracing |
-| CipherTrace | 2015 | Banks, regulators, law enforcement | DeFi monitoring, privacy coin tracing (limited) |
+| CipherTrace | 2015 | Banks, regulators, law enforcement | Decentralized finance (DeFi) monitoring, privacy coin tracing (limited) |
 | Crystal Blockchain | 2018 | Exchanges, compliance teams | Transaction visualization, risk assessment |
 
 These companies maintain proprietary databases mapping blockchain addresses to known entities — exchanges, darknet markets, ransomware groups, sanctioned addresses, and more. Their tools allow investigators to follow the flow of funds across multiple hops and identify points where cryptocurrency interacts with the regulated financial system (exchanges with Know Your Customer (KYC) requirements).
@@ -272,7 +272,7 @@ Beyond the CIOH and change detection discussed in Section 6.2, analysts employ a
 
 - **Multi-signature identification:** Transactions requiring multiple signatures reveal organizational structures
 - **Spending pattern analysis:** Exchanges have characteristic patterns (large consolidation transactions, consistent fee rates)
-- **Script analysis:** The type of Bitcoin script used (P2PKH, P2SH, P2WPKH, P2TR) can fingerprint wallet software
+- **Script analysis:** The type of Bitcoin script used (pay-to-public-key-hash (P2PKH), pay-to-script-hash (P2SH), pay-to-witness-public-key-hash (P2WPKH), pay-to-Taproot (P2TR)) can fingerprint wallet software
 - **Fee rate analysis:** Different wallets use different fee estimation algorithms, creating identifiable patterns
 - **Locktime analysis:** Some wallets set the nLockTime field to the current block height as an anti-fee-sniping measure, which reveals information about the wallet software
 - **Output ordering:** Whether the payment or change output appears first varies by wallet implementation
@@ -398,7 +398,7 @@ Network-level privacy is a critical complement to on-chain privacy. Even if a us
 1. **Tor:** Routes Bitcoin traffic through the Tor network, hiding the user's IP address from both peers and surveillance nodes
 2. **VPN:** Encrypts traffic to a single relay point; less robust than Tor but simpler to use
 3. **Dandelion (BIP 156):** A protocol-level improvement that adds a "stem phase" to transaction propagation, making it harder to identify the originating node
-4. **Block relay networks:** Specialized relay networks (like FIBRE) that separate transaction relay from block relay, reducing timing-based deanonymization
+4. **Block relay networks:** Specialized relay networks (like Fast Internet Bitcoin Relay Engine (FIBRE)) that separate transaction relay from block relay, reducing timing-based deanonymization
 
 **Source:** Biryukov, A. & Pustogarov, I. (2015). "Bitcoin over Tor isn't a Good Idea." IEEE Symposium on Security and Privacy. https://arxiv.org/abs/1410.6079
 
@@ -456,7 +456,7 @@ Every ZKP must satisfy three properties:
 
 > **Definition: zk-SNARK (Zero-Knowledge Succinct Non-Interactive Argument of Knowledge)**
 >
-> A zk-SNARK is a type of zero-knowledge proof that is: (1) Succinct — the proof is small (a few hundred bytes) and can be verified in milliseconds, regardless of the complexity of the computation being proved; (2) Non-interactive — the prover sends a single message to the verifier with no back-and-forth; (3) An Argument of Knowledge — the prover demonstrates not just that a statement is true, but that they know the witness (secret information) that makes it true.
+> A zero-knowledge succinct non-interactive argument of knowledge (zk-SNARK) is a type of zero-knowledge proof that is: (1) Succinct — the proof is small (a few hundred bytes) and can be verified in milliseconds, regardless of the complexity of the computation being proved; (2) Non-interactive — the prover sends a single message to the verifier with no back-and-forth; (3) An Argument of Knowledge — the prover demonstrates not just that a statement is true, but that they know the witness (secret information) that makes it true.
 
 **Trusted setup requirement:**
 
@@ -480,7 +480,7 @@ The mathematical elegance of this process is that a correct proof is only a few 
 
 > **Definition: zk-STARK (Zero-Knowledge Scalable Transparent Argument of Knowledge)**
 >
-> A zk-STARK is a type of zero-knowledge proof that is: (1) Scalable — proof generation time scales quasi-linearly with the computation size, and verification time scales logarithmically; (2) Transparent — requires no trusted setup; the public parameters are generated using publicly verifiable randomness. zk-STARKs were developed by Eli Ben-Sasson and colleagues at the Technion and later commercialized through StarkWare.
+> A zero-knowledge scalable transparent argument of knowledge (zk-STARK) is a type of zero-knowledge proof that is: (1) Scalable — proof generation time scales quasi-linearly with the computation size, and verification time scales logarithmically; (2) Transparent — requires no trusted setup; the public parameters are generated using publicly verifiable randomness. zk-STARKs were developed by Eli Ben-Sasson and colleagues at the Technion and later commercialized through StarkWare.
 
 **No trusted setup:**
 zk-STARKs replace the trusted setup with transparent randomness derived from public data (such as hash functions). There is no "toxic waste" — no secret values that must be destroyed. This eliminates the trust assumption entirely.
@@ -500,7 +500,7 @@ The primary disadvantage of zk-STARKs relative to zk-SNARKs is proof size. A zk-
 | Verification time | ~10 ms | ~50-100 ms |
 | Prover time | Moderate | Higher (but scales better) |
 | Quantum resistance | No (relies on elliptic curves) | Yes (relies on hash functions) |
-| Mathematical basis | Elliptic curve pairings | Polynomial commitments via FRI |
+| Mathematical basis | Elliptic curve pairings | Polynomial commitments via Fast Reed-Solomon Interactive Oracle Proof of Proximity (FRI) |
 | Maturity | More mature, widely deployed | Newer, growing adoption |
 | Notable users | Zcash, Tornado Cash, Filecoin | StarkNet, StarkEx, Polygon Miden |
 
@@ -508,7 +508,7 @@ The primary disadvantage of zk-STARKs relative to zk-SNARKs is proof size. A zk-
 
 Zero-knowledge proofs have found applications far beyond transaction privacy:
 
-**ZK-rollups (scaling):** Layer 2 scaling solutions that batch hundreds or thousands of transactions off-chain, compute the resulting state changes, and post a single zero-knowledge proof to the main chain. The proof demonstrates that all transactions in the batch were valid, without requiring the main chain to re-execute them. This dramatically increases throughput while inheriting the security of the base layer.
+**Zero-knowledge (ZK) rollups (scaling):** Layer 2 scaling solutions that batch hundreds or thousands of transactions off-chain, compute the resulting state changes, and post a single zero-knowledge proof to the main chain. The proof demonstrates that all transactions in the batch were valid, without requiring the main chain to re-execute them. This dramatically increases throughput while inheriting the security of the base layer.
 
 **Identity and credentials:** Users can prove attributes about themselves (e.g., "I am over 18," "I am a citizen of country X," "my credit score is above 700") without revealing the underlying data. This enables privacy-preserving KYC where users prove compliance without exposing personal information.
 
@@ -677,7 +677,7 @@ Zcash uniquely supports both transparent and shielded transactions:
 
 **Shielded pool (z-addresses):**
 - Sender, receiver, and amount are all encrypted
-- Uses addresses starting with "zs" (Sapling) or "zo" (Orchard, from NU5)
+- Uses addresses starting with "zs" (Sapling) or "zo" (Orchard, from Network Upgrade 5 (NU5))
 - Transaction validity verified via zk-SNARKs
 - Higher computational cost for proof generation
 
@@ -764,7 +764,7 @@ Despite its advanced cryptography, Zcash has faced significant adoption challeng
 
 - **Grin:** Launched January 2019. A community-driven implementation focused on minimalism and scalability. Uses a linear emission schedule (constant block reward, no supply cap).
 - **Beam:** Launched January 2019. A company-backed implementation with additional features (opt-in auditability, atomic swaps). Includes a development fund through a built-in treasury.
-- **Litecoin MWEB (Mimblewimble Extension Blocks):** Activated May 2022. Adds an optional Mimblewimble sidechain to Litecoin, allowing users to move LTC into a privacy-enhanced pool and back.
+- **Litecoin Mimblewimble Extension Blocks (MWEB):** Activated May 2022. Adds an optional Mimblewimble sidechain to Litecoin, allowing users to move Litecoin (LTC) into a privacy-enhanced pool and back.
 
 **Limitations:** Research by Ivan Bogatyy (2019) demonstrated that Mimblewimble transactions could be linked by monitoring the network in real time — before cut-through occurs. By observing the peer-to-peer network, an eavesdropper could reconstruct the original transaction graph with high success rates.
 
@@ -776,7 +776,7 @@ Despite its advanced cryptography, Zcash has faced significant adoption challeng
 
 > **Definition: Tornado Cash**
 >
-> Tornado Cash was a decentralized, non-custodial privacy protocol on Ethereum that used zk-SNARKs to break the on-chain link between depositor and withdrawer addresses. Users deposited a fixed denomination of Ether (ETH) or ERC-20 tokens into a smart contract pool and later withdrew the same amount to a different address, using a zero-knowledge proof to demonstrate they had made a valid deposit without revealing which one.
+> Tornado Cash was a decentralized, non-custodial privacy protocol on Ethereum that used zk-SNARKs to break the on-chain link between depositor and withdrawer addresses. Users deposited a fixed denomination of Ether (ETH) or Ethereum Request for Comments 20 (ERC-20) tokens into a smart contract pool and later withdrew the same amount to a different address, using a zero-knowledge proof to demonstrate they had made a valid deposit without revealing which one.
 
 **How Tornado Cash worked:**
 
@@ -793,7 +793,7 @@ The Office of Foreign Assets Control (OFAC) of the US Department of the Treasury
 **Implications:**
 - US persons were prohibited from interacting with the sanctioned smart contract addresses
 - Major Ethereum infrastructure providers (Infura, Alchemy) began blocking calls to Tornado Cash contracts
-- Circle (issuer of USDC) froze USDC held in Tornado Cash-related addresses
+- Circle (issuer of USD Coin (USDC)) froze USDC held in Tornado Cash-related addresses
 - GitHub removed the Tornado Cash repository and suspended the accounts of its contributors
 - The lead developer, Alexey Pertsev, was arrested in the Netherlands in August 2022, tried, and convicted of money laundering in May 2024
 
@@ -877,7 +877,7 @@ The August 2022 OFAC sanctions on Tornado Cash (discussed in Section 6.8.2) had 
 - The November 2024 appeals court ruling partially limited OFAC's authority but did not fully resolve the legal questions
 
 **Technical implications:**
-- Demonstrated the fragility of decentralization assumptions — infrastructure providers (RPC nodes, front-ends, code repositories) are centralized chokepoints
+- Demonstrated the fragility of decentralization assumptions — infrastructure providers (remote procedure call (RPC) nodes, front-ends, code repositories) are centralized chokepoints
 - Led to increased development of fully decentralized front-ends and infrastructure
 - Accelerated interest in "credibly neutral" privacy tools that cannot be controlled by any entity
 - Prompted discussion about the censorship resistance of Ethereum's validator set (some validators began excluding Tornado Cash transactions from blocks)
@@ -925,7 +925,7 @@ The regulatory landscape for privacy in cryptocurrency is evolving rapidly:
 
 **Trends:**
 - **Increasing enforcement:** Governments are investing in blockchain surveillance capabilities and pursuing enforcement actions against privacy tools and their developers
-- **Delistings:** Privacy coins face delistings from major exchanges in jurisdictions with strict AML requirements (Japan, South Korea, the EU under the Markets in Crypto-Assets (MiCA) regulation)
+- **Delistings:** Privacy coins face delistings from major exchanges in jurisdictions with strict AML requirements (Japan, South Korea, the European Union (EU) under the Markets in Crypto-Assets (MiCA) regulation)
 - **Emerging frameworks:** The EU's MiCA regulation, the US bipartisan stablecoin bills, and similar frameworks worldwide are setting clearer (if sometimes conflicting) rules
 - **Technology-neutral regulation:** Some jurisdictions are moving toward regulating outcomes (preventing money laundering) rather than specific technologies (banning privacy coins), which is more compatible with innovation
 - **Zero-knowledge compliance:** The development of ZKP-based compliance tools may allow privacy and regulation to coexist, though this remains largely theoretical

@@ -25,7 +25,7 @@
 >
 > Proof-of-Work energy consumption refers to the electricity required to power the specialized hardware that miners use to continuously compute cryptographic hashes. Because PoW mining is a brute-force process — trying trillions of hash inputs per second to find one that meets the difficulty target — it requires continuous electricity for both computation and cooling infrastructure. The energy consumed is not per transaction but per block; the network draws roughly the same power regardless of how many transactions are included in each block.
 
-At its core, Bitcoin mining is an energy-intensive process by design. Miners run Application-Specific Integrated Circuits (ASICs) that perform SHA-256 hash computations at enormous rates. A modern ASIC like the Bitmain Antminer S21 computes approximately 200 terahashes per second (TH/s) while consuming around 3,500 watts. When multiplied across the hundreds of thousands of machines operating globally, the aggregate power draw is substantial.
+At its core, Bitcoin mining is an energy-intensive process by design. Miners run Application-Specific Integrated Circuits (ASICs) that perform Secure Hash Algorithm 256 (SHA-256) hash computations at enormous rates. A modern ASIC like the Bitmain Antminer S21 computes approximately 200 terahashes per second (TH/s) while consuming around 3,500 watts. When multiplied across the hundreds of thousands of machines operating globally, the aggregate power draw is substantial.
 
 The energy consumption is continuous because mining is a competitive race. Miners cannot "pause" without losing potential revenue — every second a machine is offline, other miners are hashing and potentially winning the next block reward. This creates a 24/7 energy demand that scales directly with the economic incentives of the network.
 
@@ -76,12 +76,12 @@ To contextualize Bitcoin's energy consumption, it is useful to compare it agains
 
 | Industry / Activity | Estimated Annual Energy (TWh) | Source |
 |---------------------|-------------------------------|--------|
-| Global data centers | ~800-1,000 | IEA (2024) |
+| Global data centers | ~800-1,000 | International Energy Agency (IEA, 2024) |
 | Gold mining | ~240-270 | Galaxy Digital (2021), updated estimates |
 | Global banking system | ~260-340 | Valuechain / Galaxy Digital |
 | **Bitcoin mining** | **~150-180** | CBECI (2025) |
-| Tumble dryers (US only) | ~100 | EIA |
-| Christmas lights (US only) | ~6.6 | US DOE |
+| Tumble dryers (US only) | ~100 | Energy Information Administration (EIA) |
+| Christmas lights (US only) | ~6.6 | US Department of Energy (DOE) |
 
 These comparisons are informative but must be interpreted carefully. Bitcoin serves a fundamentally different purpose than household appliances, and comparing it to the entire banking system conflates very different types of infrastructure. The appropriate comparison depends on what one believes Bitcoin's role in the global economy should be.
 
@@ -111,7 +111,7 @@ The CBECI has become the most widely cited source for Bitcoin energy estimates i
 
 Bitcoin's energy consumption is not arbitrary — it is an emergent property of economic incentives. The relationship follows a clear causal chain:
 
-1. **Bitcoin price rises** — The block reward (currently 3.125 BTC post-April 2024 halving) becomes more valuable in fiat terms
+1. **Bitcoin price rises** — The block reward (currently 3.125 bitcoin (BTC) post-April 2024 halving) becomes more valuable in fiat terms
 2. **Mining becomes more profitable** — Existing miners earn higher revenue; marginal miners with higher electricity costs become profitable
 3. **More hash rate comes online** — New miners deploy hardware, and existing miners expand operations
 4. **Difficulty adjusts upward** — The protocol increases difficulty to maintain 10-minute block intervals
@@ -151,7 +151,7 @@ Converting Bitcoin's electricity consumption to carbon emissions is not straight
 | Coal | 900-1,050 | Highest carbon intensity |
 | Natural gas | 400-500 | About half of coal |
 | Oil | 650-890 | Variable by type |
-| Solar PV | 20-50 | Lifecycle emissions only |
+| Solar photovoltaic (PV) | 20-50 | Lifecycle emissions only |
 | Wind | 7-15 | Lifecycle emissions only |
 | Hydroelectric | 4-30 | Varies by reservoir type |
 | Nuclear | 5-15 | Lifecycle emissions only |
@@ -216,7 +216,7 @@ A commonly cited statistic is the carbon footprint "per Bitcoin transaction." Va
    - A batched exchange withdrawal containing hundreds of individual payouts
    - A CoinJoin transaction mixing funds from dozens of participants
 
-3. **The metric penalizes efficiency improvements.** If Bitcoin adopted SegWit more fully and included more transactions per block, the "per transaction" figure would drop — but energy consumption would remain unchanged.
+3. **The metric penalizes efficiency improvements.** If Bitcoin adopted Segregated Witness (SegWit) more fully and included more transactions per block, the "per transaction" figure would drop — but energy consumption would remain unchanged.
 
 4. **No other payment system is measured this way.** Visa's energy per transaction excludes the entire banking infrastructure that makes Visa transactions possible (branches, ATMs, armored vehicles, office buildings).
 
@@ -266,7 +266,7 @@ One of the most significant developments in sustainable mining is the monetizati
 **Curtailed Renewables:**
 - Wind and solar installations sometimes produce more electricity than the grid can absorb, particularly during off-peak hours
 - Rather than curtailing (shutting down) these generators, the excess can be routed to mining operations
-- ERCOT (the Texas grid operator) has seen significant mining load that ramps up during periods of excess renewable generation and ramps down during peak demand
+- The Electric Reliability Council of Texas (ERCOT), the Texas grid operator, has seen significant mining load that ramps up during periods of excess renewable generation and ramps down during peak demand
 
 **Source:** Crusoe Energy. (2023). Digital Flare Mitigation. https://www.crusoeenergy.com/
 
@@ -333,7 +333,7 @@ Estimates of the share of renewable energy in Bitcoin mining vary by source and 
 | Source | Estimated Sustainable/Renewable Share | Year |
 |--------|---------------------------------------|------|
 | Bitcoin Mining Council | ~60-67% (members), ~55-60% (global estimate) | 2024 |
-| CCAF / Cambridge | ~37-40% (narrower renewable definition) | 2023 |
+| Cambridge Centre for Alternative Finance (CCAF) / Cambridge | ~37-40% (narrower renewable definition) | 2023 |
 | CoinShares | ~74% (including hydro-heavy regions) | 2022 |
 | Digiconomist | ~25-40% (lower-bound estimates) | 2023 |
 
@@ -354,7 +354,7 @@ The lifecycle of Bitcoin mining hardware creates a unique e-waste challenge:
 1. **Rapid innovation cycle** — ASIC manufacturers (Bitmain, MicroBT, Canaan) release new models every 12-18 months with significant efficiency improvements
 2. **Binary profitability threshold** — Unlike consumer electronics that degrade gradually, ASICs hit a hard economic wall: once electricity cost exceeds mining revenue per unit, the hardware becomes worthless overnight
 3. **Price sensitivity** — A significant bitcoin price drop can instantly render entire generations of older ASICs unprofitable, creating sudden waves of hardware retirements
-4. **Single-purpose design** — Unlike GPUs that can be repurposed for gaming, AI training, or other computational tasks, SHA-256 ASICs can only perform Bitcoin mining. When they become unprofitable for mining, they have no alternative use.
+4. **Single-purpose design** — Unlike graphics processing units (GPUs) that can be repurposed for gaming, artificial intelligence (AI) training, or other computational tasks, SHA-256 ASICs can only perform Bitcoin mining. When they become unprofitable for mining, they have no alternative use.
 
 **Efficiency progression of major ASIC models:**
 
@@ -377,7 +377,7 @@ Each new generation renders older models less competitive. An S9 (98 J/TH) consu
 
 Estimates of Bitcoin's annual e-waste contribution have been studied by several researchers:
 
-- **de Vries and Stoll (2021)** estimated Bitcoin generates approximately 30,700 tonnes of e-waste annually, comparable to the small IT equipment waste of a country like the Netherlands
+- **de Vries and Stoll (2021)** estimated Bitcoin generates approximately 30,700 tonnes of e-waste annually, comparable to the small information technology (IT) equipment waste of a country like the Netherlands
 - At peak hash rate turnover periods (when new ASIC generations are released or bitcoin price drops sharply), e-waste generation can spike significantly
 - The average weight of a mining ASIC unit is approximately 12-15 kg, meaning the retirement of tens of thousands of units annually creates substantial material waste
 
@@ -403,7 +403,7 @@ Bitcoin mining's e-waste represents roughly 0.05% of global e-waste by weight. H
 
 Mining ASIC recycling faces several specific challenges:
 
-- **Single-purpose chips** — The SHA-256 ASIC chips themselves cannot be repurposed, unlike general-purpose CPUs or GPUs
+- **Single-purpose chips** — The SHA-256 ASIC chips themselves cannot be repurposed, unlike general-purpose central processing units (CPUs) or GPUs
 - **Hazardous materials** — Circuit boards contain lead solder, and some components include rare earth elements that require specialized recycling processes
 - **Geographic concentration** — Large-scale mining operations are often in remote locations with limited recycling infrastructure
 - **Economic incentives** — The value of recoverable materials (copper, aluminum, gold traces) from ASICs is often less than the cost of recycling
@@ -484,7 +484,7 @@ This question remains one of the most contested in the cryptocurrency space. Arg
 
 **Arguments that PoS security is sufficient:**
 - Ethereum has operated securely under PoS since The Merge with no successful attacks on consensus
-- Slashing penalties (losing staked ETH) create strong disincentives for misbehavior — validators have "skin in the game"
+- Slashing penalties (losing staked ether (ETH)) create strong disincentives for misbehavior — validators have "skin in the game"
 - The cost of a 51% attack on Ethereum would require acquiring ~$30 billion in ETH, which would crash the price and destroy the attacker's own stake
 - PoS allows for "social recovery" — the community can coordinate a hard fork to punish attackers, which is not possible with PoW
 
@@ -508,7 +508,7 @@ The hardware requirements for PoS validation are dramatically lower than for PoW
 | Power consumption | 3,000-3,500 W per unit | 10-50 W per validator node |
 | Cooling requirements | Significant (dedicated facilities) | None (standard room temperature) |
 | Internet bandwidth | Low | Moderate (~10 Mbps) |
-| Storage | Minimal | ~2 TB SSD (for full node) |
+| Storage | Minimal | ~2 TB solid-state drive (SSD; for full node) |
 | Capital requirement | Hardware + ongoing electricity | 32 ETH staked (~$80,000-100,000 at 2025 prices) |
 | Noise | Extreme (~75 dB per unit) | Silent |
 
@@ -603,7 +603,7 @@ Several certification and standards frameworks have emerged:
 
 - **Clean Energy Mining Certification** — Various proposals for certifying that specific mining operations use renewable energy, potentially allowing "green bitcoin" to command a premium
 - **Energy Web Foundation** — Developing blockchain-based tools for verifying renewable energy usage in mining
-- **ISO 14064** — Some mining companies are pursuing greenhouse gas accounting under existing ISO standards
+- **ISO 14064** — Some mining companies are pursuing greenhouse gas accounting under existing International Organization for Standardization (ISO) standards
 - **Renewable Energy Certificates (RECs)** — Miners purchase RECs to offset their grid electricity consumption with renewable energy credits, though critics argue RECs do not represent actual renewable energy consumption
 
 ### 9.7.4 Carbon Offset and Carbon Credit Programs

@@ -40,10 +40,10 @@ For cryptocurrency to move beyond speculation and serve as genuine financial inf
 Stablecoins address concrete use cases where volatility is unacceptable:
 
 - **Payments and commerce:** Merchants need assurance that the $100 they receive today will still be worth approximately $100 tomorrow. Stablecoins enable crypto-native payments without exchange-rate risk.
-- **Lending and borrowing:** Decentralized Finance (DeFi) lending protocols require stable units for loan denomination. A loan issued in ETH could double or halve in value before repayment, creating asymmetric risk for borrowers or lenders.
-- **Remittances:** Cross-border money transfers through traditional channels (Western Union, SWIFT) cost 5-7% on average. Stablecoins on public blockchains can reduce this to fractions of a percent while settling in minutes rather than days.
+- **Lending and borrowing:** Decentralized Finance (DeFi) lending protocols require stable units for loan denomination. A loan issued in ether (ETH) could double or halve in value before repayment, creating asymmetric risk for borrowers or lenders.
+- **Remittances:** Cross-border money transfers through traditional channels (Western Union, Society for Worldwide Interbank Financial Telecommunication (SWIFT)) cost 5-7% on average. Stablecoins on public blockchains can reduce this to fractions of a percent while settling in minutes rather than days.
 - **Payroll:** Companies operating across borders use stablecoins to pay contractors in jurisdictions with limited banking infrastructure.
-- **Trading pairs:** On cryptocurrency exchanges, stablecoins serve as the quote currency in trading pairs (e.g., BTC/USDT), replacing the need for fiat on-ramps.
+- **Trading pairs:** On cryptocurrency exchanges, stablecoins serve as the quote currency in trading pairs (e.g., bitcoin (BTC) against Tether (USDT)), replacing the need for fiat on-ramps.
 
 ### 7.1.3 Stablecoins as the Bridge Between Crypto and Traditional Finance
 
@@ -58,14 +58,14 @@ The stablecoin market has grown from negligible value in 2017 to a multi-hundred
 | Year | Total Stablecoin Market Cap | Key Milestone |
 |---|---|---|
 | 2017 | ~$1 billion | Tether dominance, limited to crypto trading |
-| 2019 | ~$5 billion | USDC launched by Circle/Coinbase (Centre consortium) |
+| 2019 | ~$5 billion | USD Coin (USDC) launched by Circle/Coinbase (Centre consortium) |
 | 2020 | ~$25 billion | DeFi Summer drives stablecoin demand |
-| 2021 | ~$140 billion | Institutional adoption accelerates; UST grows rapidly |
+| 2021 | ~$140 billion | Institutional adoption accelerates; TerraUSD (UST) grows rapidly |
 | 2022 (pre-crash) | ~$180 billion | Peak market cap before Terra collapse |
 | 2022 (post-crash) | ~$135 billion | ~$45 billion wiped out from UST/LUNA collapse |
-| 2023 | ~$130 billion | Recovery begins; USDC depegs briefly during SVB crisis |
+| 2023 | ~$130 billion | Recovery begins; USDC depegs briefly during Silicon Valley Bank (SVB) crisis |
 | 2024 | ~$170 billion | Regulatory clarity drives renewed growth |
-| 2025 | ~$210 billion+ | Stablecoin legislation advances in the U.S. and EU |
+| 2025 | ~$210 billion+ | Stablecoin legislation advances in the U.S. and European Union (EU) |
 
 Stablecoin transaction volume tells an even more dramatic story. In 2024, stablecoins settled over $10 trillion in on-chain transactions, rivaling the throughput of major traditional payment networks.
 
@@ -85,7 +85,7 @@ Stablecoin transaction volume tells an even more dramatic story. In 2024, stable
 
 The mechanism is straightforward:
 
-1. **Minting:** A user deposits $1,000 USD with the issuer (e.g., Circle, Tether). The issuer mints 1,000 stablecoin tokens and sends them to the user's blockchain address.
+1. **Minting:** A user deposits $1,000 US dollar (USD) with the issuer (e.g., Circle, Tether). The issuer mints 1,000 stablecoin tokens and sends them to the user's blockchain address.
 2. **Circulation:** The tokens circulate freely on public blockchains. Anyone can send, receive, or trade them without the issuer's involvement.
 3. **Redemption:** A user sends 1,000 stablecoin tokens back to the issuer. The issuer burns (destroys) the tokens and wires $1,000 USD to the user's bank account.
 4. **Peg maintenance:** If the market price deviates from $1.00, arbitrageurs profit by minting or redeeming, which naturally restores the peg (see Section 7.6).
@@ -193,7 +193,7 @@ The distinction between an **audit** and an **attestation** is important. An aud
 
 The basic flow:
 
-1. A user deposits cryptocurrency (e.g., ETH) into a smart contract (called a "vault" or "CDP").
+1. A user deposits cryptocurrency (e.g., ETH) into a smart contract (called a "vault" or "collateralized debt position (CDP)").
 2. The smart contract allows the user to mint stablecoins up to a maximum determined by the collateralization ratio.
 3. To retrieve the locked crypto, the user must repay the minted stablecoins plus any accrued stability fees.
 4. If the value of the locked collateral falls below a threshold, the position is liquidated to protect the system's solvency.
@@ -276,7 +276,7 @@ The stability fee and DSR work together as monetary policy levers:
 
 The original Single-Collateral DAI (SCD), launched in December 2017, accepted only ETH as collateral. Multi-Collateral DAI (MCD), launched in November 2019, expanded the system to accept multiple collateral types:
 
-- **Crypto assets:** ETH, WBTC (Wrapped Bitcoin), LINK, UNI, and many others
+- **Crypto assets:** ETH, Wrapped Bitcoin (WBTC), Chainlink (LINK), Uniswap (UNI), and many others
 - **Real-World Assets (RWAs):** U.S. Treasuries (through entities like BlockTower), tokenized short-term bonds
 - **Stablecoins:** USDC was controversially added as collateral, effectively making a portion of DAI's backing centralized
 
@@ -286,7 +286,7 @@ By 2024, over 50% of DAI's collateral was composed of Real-World Assets (primari
 
 > **Definition: MKR Token**
 >
-> MKR is the governance token of the Maker Protocol. MKR holders vote on critical protocol parameters including collateral types, stability fees, liquidation ratios, and system upgrades. MKR also serves as the "lender of last resort": if the system becomes undercollateralized (e.g., during a black swan crash), new MKR is minted and auctioned to recapitalize the system, diluting existing MKR holders.
+> Maker (MKR) is the governance token of the Maker Protocol. MKR holders vote on critical protocol parameters including collateral types, stability fees, liquidation ratios, and system upgrades. MKR also serves as the "lender of last resort": if the system becomes undercollateralized (e.g., during a black swan crash), new MKR is minted and auctioned to recapitalize the system, diluting existing MKR holders.
 
 Key governance decisions made by MKR holders:
 - Which assets to accept as collateral and their risk parameters
@@ -306,7 +306,7 @@ Liquity is an alternative decentralized stablecoin protocol launched in April 20
 - **ETH-only collateral:** Only accepts ETH, avoiding exposure to other tokens' risks.
 - **Minimum collateral ratio:** 110% (significantly lower than Maker's 150%), enabling greater capital efficiency.
 - **One-time borrowing fee:** Instead of ongoing stability fees, Liquity charges a one-time, algorithmically determined borrowing fee.
-- **Stability pool:** LUSD holders can deposit into a stability pool that automatically purchases discounted collateral from liquidated positions, providing a return to depositors while ensuring efficient liquidations.
+- **Stability pool:** Liquity USD (LUSD) holders can deposit into a stability pool that automatically purchases discounted collateral from liquidated positions, providing a return to depositors while ensuring efficient liquidations.
 
 Liquity's design trades governance flexibility for immutability and censorship resistance. Its LUSD stablecoin has maintained a strong peg despite having no governance mechanism to adjust parameters.
 
@@ -409,7 +409,7 @@ The challenge with rebase mechanisms is that negative rebases are psychologicall
 FRAX, created by Sam Kazemian, introduced the concept of a fractional algorithmic stablecoin. Rather than being fully collateralized or fully algorithmic, FRAX operated on a spectrum:
 
 - A portion of each FRAX is backed by collateral (initially USDC)
-- The remaining portion is backed algorithmically via the FXS (FRAX Share) token
+- The remaining portion is backed algorithmically via the FRAX Share (FXS) token
 - The **Collateral Ratio (CR)** adjusts dynamically based on market conditions
 
 **Example at 85% CR:**
@@ -562,7 +562,7 @@ The core problem was that UST's "backing" was LUNA, but LUNA's value derived fro
 | LUNA market cap | ~$28 billion | ~$0 |
 | LUNA price | ~$80 | < $0.0001 |
 | LUNA supply | ~350 million | ~6.5 trillion |
-| Anchor TVL | ~$14 billion | $0 |
+| Anchor total value locked (TVL) | ~$14 billion | $0 |
 | Total value destroyed | | **~$40 billion** |
 
 The collapse affected thousands of retail investors, many of whom had concentrated their savings in Anchor's 20% yield. Reports of personal financial devastation and suicides followed.
@@ -622,7 +622,7 @@ The tighter the arbitrage loop (faster redemption, lower fees, lower minimums), 
 | Feature | Primary Market | Secondary Market |
 |---|---|---|
 | **Participants** | Authorized institutions, large users | Anyone (traders, users, bots) |
-| **Mechanism** | Direct mint/redeem with issuer | Exchange trading (DEX or CEX) |
+| **Mechanism** | Direct mint/redeem with issuer | Exchange trading (decentralized exchange (DEX) or centralized exchange (CEX)) |
 | **Price** | Always $1.00 (by definition) | Fluctuates based on supply/demand |
 | **Settlement time** | Hours to days (requires bank wires) | Seconds to minutes |
 | **Minimum size** | Often $100,000+ (USDC commercial) | Any amount |
@@ -685,7 +685,7 @@ Stablecoins are the foundational building block of Decentralized Finance (DeFi).
 
 - **Pricing:** DeFi users think in dollar terms. A lending rate of "5% APY on USDC" is immediately comprehensible; "5% APY on ETH" obscures the dollar-denominated return.
 - **Risk isolation:** Using stablecoins separates protocol risk (smart contract bugs, oracle failures) from price risk (asset volatility). A user lending USDC only faces protocol risk, not ETH price risk.
-- **Composability:** Stablecoins serve as a neutral intermediary between different DeFi protocols. A user can borrow USDC from Aave, deposit it in a Curve pool, stake the LP token in Convex, and later repay the loan — all denominated in a stable unit.
+- **Composability:** Stablecoins serve as a neutral intermediary between different DeFi protocols. A user can borrow USDC from Aave, deposit it in a Curve pool, stake the liquidity provider (LP) token in Convex, and later repay the loan — all denominated in a stable unit.
 
 As of 2025, stablecoins represent over $50 billion in Total Value Locked (TVL) across DeFi protocols, accounting for roughly one-third of all DeFi TVL.
 
@@ -713,7 +713,7 @@ Stablecoins are the most borrowed and lent assets in DeFi lending protocols (Aav
 
 **Numerical example:**
 - Alice deposits 10 ETH ($20,000) into Aave
-- Borrows 12,000 USDC (60% LTV) at 4% APY
+- Borrows 12,000 USDC (60% loan-to-value (LTV)) at 4% APY
 - After one year, she owes 12,480 USDC
 - If ETH has risen to $3,000, Alice repays 12,480 USDC, reclaims 10 ETH ($30,000), and has effectively leveraged her ETH exposure
 
@@ -726,7 +726,7 @@ Stablecoin holders can earn yield through several DeFi mechanisms:
 | Strategy | Typical APY Range | Risk Level | Description |
 |---|---|---|---|
 | Lending (Aave, Compound) | 2-8% | Low-Medium | Deposit stablecoins; earn interest from borrowers |
-| Liquidity provision (Curve) | 3-12% | Medium | Provide liquidity to stablecoin pools; earn trading fees + CRV rewards |
+| Liquidity provision (Curve) | 3-12% | Medium | Provide liquidity to stablecoin pools; earn trading fees + Curve DAO Token (CRV) rewards |
 | DAI Savings Rate (DSR) | 5-15% | Low | Deposit DAI in the DSR contract; earn yield funded by stability fees |
 | Yield aggregators (Yearn) | 4-15% | Medium | Automated strategies that optimize across protocols |
 | Real-world asset vaults | 4-8% | Medium | Stablecoins deployed to fund tokenized T-bill or corporate debt positions |
@@ -748,7 +748,7 @@ CRV, Curve's governance token, controls the allocation of CRV emissions (reward 
 The competition to control CRV emissions became known as the "Curve Wars":
 
 1. **Convex Finance** accumulated voting power by collecting CRV from depositors, becoming the largest CRV voter
-2. **Stablecoin projects** (FRAX, UST, MIM, and others) spent millions acquiring Convex voting tokens (CVX) to direct CRV emissions toward their pools
+2. **Stablecoin projects** (FRAX, UST, Magic Internet Money (MIM), and others) spent millions acquiring Convex voting tokens (CVX) to direct CRV emissions toward their pools
 3. **Bribing protocols** (Votium, Hidden Hand) emerged, allowing projects to pay Convex/Curve voters directly for their votes
 
 The Curve Wars demonstrated that stablecoin peg stability is not just a technical problem — it is also a liquidity competition. The stablecoin with the deepest Curve pool enjoys tighter peg maintenance and greater usability.
@@ -761,7 +761,7 @@ Beyond Curve, several innovations have improved stablecoin trading efficiency:
 
 - **Uniswap v3 concentrated liquidity:** Liquidity providers can concentrate their capital within a tight price range (e.g., $0.999 to $1.001 for stablecoin pairs), dramatically improving capital efficiency for stablecoin swaps.
 - **Aggregators (1inch, Paraswap):** Route large stablecoin trades across multiple DEXs and pools to minimize slippage.
-- **RFQ (Request for Quote) systems:** Protocols like Hashflow enable market makers to provide quotes for large stablecoin trades off-chain, settling on-chain.
+- **Request for Quote (RFQ) systems:** Protocols like Hashflow enable market makers to provide quotes for large stablecoin trades off-chain, settling on-chain.
 
 ---
 
@@ -813,7 +813,7 @@ Emerging regulatory standards globally are converging on several key requirement
 Several regulators and policymakers have argued that stablecoin issuers are functionally equivalent to narrow banks (banks that hold only safe, liquid assets) and should be regulated accordingly:
 
 - **Federal Reserve:** A 2022 Fed paper suggested that stablecoins could be regulated as "synthetic central bank money" if issuers were required to hold reserves exclusively at the Fed.
-- **OCC (Office of the Comptroller of the Currency):** Has issued interpretive letters affirming that national banks may hold stablecoin reserves and that stablecoin activity is within the "business of banking."
+- **Office of the Comptroller of the Currency (OCC):** Has issued interpretive letters affirming that national banks may hold stablecoin reserves and that stablecoin activity is within the "business of banking."
 - **Bank of England:** Proposed that systemic stablecoins should be regulated to the same standard as commercial bank deposits, with equivalent consumer protection.
 
 The tension: bank-like regulation provides safety and legitimacy but imposes compliance costs and barriers to entry that favor large, established financial institutions over crypto-native startups.
@@ -838,7 +838,7 @@ Tether's offshore structure has been simultaneously its vulnerability (regulator
 Regulation is shaping stablecoin design in several ways:
 
 1. **Move toward full collateralization:** Post-Terra, both regulators and the market strongly prefer fully collateralized designs. Algorithmic stablecoins face de facto regulatory prohibitions in many jurisdictions.
-2. **Compliance features built in:** New stablecoins are being designed with compliance features (KYC/AML hooks, freeze functions, transfer restrictions) from inception.
+2. **Compliance features built in:** New stablecoins are being designed with compliance features (know your customer (KYC) and anti-money laundering (AML) hooks, freeze functions, transfer restrictions) from inception.
 3. **Institutional adoption:** Regulatory clarity is enabling banks and traditional financial institutions to integrate stablecoins into payment, settlement, and treasury management workflows.
 4. **Global coordination challenges:** Different regulatory approaches across jurisdictions create arbitrage opportunities and compliance complexity for global issuers.
 
@@ -864,7 +864,7 @@ Key distinctions between CBDCs and stablecoins:
 | **Permissioning** | Government-controlled access | Varies (permissionless to fully KYC'd) |
 | **Programmability** | Limited in most designs | High (smart contract composability) |
 
-As of 2025, over 130 countries (representing 98% of global GDP) were exploring CBDCs in some form, according to the Atlantic Council's CBDC tracker.
+As of 2025, over 130 countries (representing 98% of global gross domestic product (GDP)) were exploring CBDCs in some form, according to the Atlantic Council's CBDC tracker.
 
 **Source:** Atlantic Council. (2025). Central Bank Digital Currency Tracker. https://www.atlanticcouncil.org/cbdctracker/
 
@@ -918,7 +918,7 @@ The United States has taken a more cautious approach to CBDCs:
 - **Research:** The Federal Reserve Bank of Boston partnered with MIT's Digital Currency Initiative on "Project Hamilton" (2020-2022), which demonstrated that a CBDC could process 1.7 million transactions per second on a single node.
 - **FedNow:** Launched in July 2023, FedNow is a real-time payment system (not a CBDC) that enables instant bank-to-bank transfers 24/7. While not a digital currency, FedNow addresses some of the same use cases that a retail CBDC would serve (instant payments, financial inclusion).
 - **Political resistance:** Several bills have been introduced in Congress to prohibit the Federal Reserve from issuing a retail CBDC, reflecting concerns about financial surveillance and government overreach. The political environment has generally been hostile to a U.S. CBDC.
-- **Digital dollar research:** Academic and private-sector research continues through the Digital Dollar Project (led by former CFTC Chairman Christopher Giancarlo) and other initiatives.
+- **Digital dollar research:** Academic and private-sector research continues through the Digital Dollar Project (led by former Commodity Futures Trading Commission (CFTC) Chairman Christopher Giancarlo) and other initiatives.
 
 **Source:** Federal Reserve Bank of Boston & MIT Digital Currency Initiative. (2022). Project Hamilton Phase 1: A High Performance Payment Processing System. https://www.bostonfed.org/publications/one-time-pubs/project-hamilton-phase-1-executive-summary.aspx
 

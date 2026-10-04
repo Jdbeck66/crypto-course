@@ -1,6 +1,6 @@
 ---
 name: validate-structure
-description: Validate project structure - check all notebooks/sections exist, have valid JSON, correct structure, and consistent cross-references
+description: Validate project structure - check all notebooks/sections exist, have valid JavaScript Object Notation (JSON), correct structure, and consistent cross-references
 disable-model-invocation: true
 ---
 

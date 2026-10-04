@@ -50,7 +50,7 @@ While all nodes are equal at the protocol level, different implementations serve
 
 **Pruned Nodes:**
 - Full nodes that validate all blocks but discard old block data after verification
-- Retain only recent blocks and the current UTXO set
+- Retain only recent blocks and the current unspent transaction output (UTXO) set
 - Reduce storage requirements (can run with as little as ~10 GB)
 - Still provide the same security guarantees during validation
 
@@ -102,7 +102,7 @@ A Bitcoin block consists of two parts: the block header and the list of transact
 | Field | Size | Description |
 |-------|------|-------------|
 | Version | 4 bytes | Block version number (indicates which rules the block follows) |
-| Previous Block Hash | 32 bytes | SHA-256d hash of the previous block's header |
+| Previous Block Hash | 32 bytes | Double Secure Hash Algorithm 256 (SHA-256d) hash of the previous block's header |
 | Merkle Root | 32 bytes | Hash of the root of the Merkle tree of all transactions in the block |
 | Timestamp | 4 bytes | Unix timestamp (seconds since Jan 1, 1970) |
 | Difficulty Target | 4 bytes | Compact representation of the target threshold for valid proof-of-work |
@@ -116,7 +116,7 @@ A Bitcoin block consists of two parts: the block header and the list of transact
 **Block body:**
 - Contains the list of transactions
 - The first transaction is always the coinbase transaction (mining reward)
-- Current block size limit: 4 MB (measured in "weight units" since the SegWit upgrade)
+- Current block size limit: 4 MB (measured in "weight units" since the Segregated Witness (SegWit) upgrade)
 - Typical block contains 2,000-4,000 transactions
 
 ### 2.2.2 Merkle Trees in Bitcoin
@@ -224,7 +224,7 @@ A Bitcoin transaction contains:
 
 | Field | Description |
 |-------|-------------|
-| Value | Amount in satoshis (1 BTC = 100,000,000 satoshis) |
+| Value | Amount in satoshis (1 bitcoin (BTC) = 100,000,000 satoshis) |
 | ScriptPubKey (Locking Script) | Conditions that must be met to spend this output (typically requires a signature from a specific public key) |
 
 > **Definition: Satoshi**
@@ -262,7 +262,7 @@ The UTXO set is the complete collection of all unspent transaction outputs at an
 
 **UTXO set properties:**
 - As of 2025, the UTXO set contains approximately 80-90 million UTXOs
-- Total size: ~5-7 GB (fits in RAM on modern computers)
+- Total size: ~5-7 GB (fits in random-access memory (RAM) on modern computers)
 - Every full node maintains the UTXO set for fast transaction validation
 - To validate a new transaction, a node checks that the referenced UTXOs exist in the set and that the cryptographic conditions (signatures) are satisfied
 
@@ -348,14 +348,14 @@ Bitcoin mining hardware has evolved through several generations:
 
 **GPU Mining (2010-2013):**
 - Graphics Processing Units (GPUs) are far more efficient at the parallel computations needed for hashing
-- Hash rate: ~200-800 MH/s (10-100x improvement over CPUs)
+- Hash rate: ~200-800 MH/s (10-100x improvement over central processing units (CPUs))
 - GPU mining rigs became common
 
 **FPGA Mining (2011-2013):**
 
-> **Definition: FPGA (Field-Programmable Gate Array)**
+> **Definition: Field-Programmable Gate Array (FPGA)**
 >
-> An FPGA is a semiconductor device that can be configured after manufacturing to perform specific computational tasks. For Bitcoin mining, FPGAs were programmed specifically for SHA-256 hashing, offering better energy efficiency than GPUs but less than ASICs.
+> An FPGA is a semiconductor device that can be configured after manufacturing to perform specific computational tasks. For Bitcoin mining, FPGAs were programmed specifically for SHA-256 hashing, offering better energy efficiency than GPUs but less than application-specific integrated circuits (ASICs).
 
 - Hash rate: ~1-5 GH/s (gigahashes per second)
 - Better energy efficiency than GPUs
@@ -396,9 +396,9 @@ Solo mining has become impractical for all but the largest operations. Even with
 
 | Method | Description | Risk Profile |
 |--------|-------------|-------------|
-| PPS (Pay Per Share) | Fixed payment per valid share submitted, regardless of blocks found | Pool bears variance risk; miner gets steady income |
-| PPLNS (Pay Per Last N Shares) | Rewards distributed based on shares contributed in a window around the block found | Shared risk; rewards vary but are higher on average than PPS |
-| FPPS (Full Pay Per Share) | Like PPS but also includes estimated transaction fees | Pool bears risk; miner gets the best steady income |
+| Pay Per Share (PPS) | Fixed payment per valid share submitted, regardless of blocks found | Pool bears variance risk; miner gets steady income |
+| Pay Per Last N Shares (PPLNS) | Rewards distributed based on shares contributed in a window around the block found | Shared risk; rewards vary but are higher on average than PPS |
+| Full Pay Per Share (FPPS) | Like PPS but also includes estimated transaction fees | Pool bears risk; miner gets the best steady income |
 
 **Mining pool centralization concerns:**
 While individual miners retain the ability to switch pools, the concentration of hash power in large pools has raised centralization concerns. If a single pool controlled more than 50% of the hash rate, it could theoretically execute a 51% attack. In practice, miners have historically migrated away from pools approaching this threshold.
@@ -497,7 +497,7 @@ As block subsidies decrease with each halving, transaction fees become an increa
 
 **Historical fee spikes:**
 - December 2017: Average fees exceeded $50 during the bull market
-- April 2021: Fees spiked due to NFT-related transactions
+- April 2021: Fees spiked due to transactions related to non-fungible tokens (NFTs)
 - May 2023: BRC-20 token minting caused fees to temporarily exceed $30
 - These spikes highlight the scalability constraints of Bitcoin's base layer
 
@@ -534,7 +534,7 @@ Bitcoin transactions use a scripting system to define spending conditions. The t
 
 ### 2.6.2 Common Script Types
 
-**P2PKH (Pay-to-Public-Key-Hash):** The original and most common script type
+**Pay-to-Public-Key-Hash (P2PKH):** The original and most common script type
 
 ```
 Locking Script:   OP_DUP OP_HASH160 <PubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
@@ -551,7 +551,7 @@ Execution:
 
 These are "Legacy" addresses starting with "1" (e.g., 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa).
 
-**P2SH (Pay-to-Script-Hash):**
+**Pay-to-Script-Hash (P2SH):**
 
 > **Definition: P2SH (Pay-to-Script-Hash)**
 >
@@ -626,7 +626,7 @@ Selfish mining is a strategy where a miner with significant hash power (not nece
 
 ### 2.7.4 Eclipse Attacks
 
-An eclipse attack isolates a target node from the rest of the network by monopolizing all of its peer connections. The attacker can then feed the victim node false information about the state of the blockchain. Defenses include peer diversity requirements and connection limits per IP range.
+An eclipse attack isolates a target node from the rest of the network by monopolizing all of its peer connections. The attacker can then feed the victim node false information about the state of the blockchain. Defenses include peer diversity requirements and connection limits per Internet Protocol (IP) range.
 
 ---
 
@@ -640,7 +640,7 @@ Bitcoin's base layer has fundamental throughput limitations:
 |--------|---------|----------------------|
 | Block time | ~10 minutes | N/A |
 | Block size | ~4 MB (weight) | N/A |
-| Transactions per second | ~7 TPS | ~65,000 TPS |
+| Transactions per second (TPS) | ~7 TPS | ~65,000 TPS |
 | Confirmation time | ~10-60 minutes | ~seconds |
 
 This "scalability trilemma" means that increasing throughput requires sacrificing either decentralization or security — or moving transactions to secondary layers.
@@ -713,7 +713,7 @@ While base-layer Bitcoin is slow and expensive for small payments, the Lightning
 - Micropayments: Tips, pay-per-article, streaming payments
 - Cross-border remittances: Lower fees than traditional services
 - Point-of-sale: Growing adoption in El Salvador and other markets
-- Machine-to-machine payments: IoT and automated systems
+- Machine-to-machine payments: Internet of Things (IoT) and automated systems
 
 ### 2.9.3 Censorship-Resistant Money
 
@@ -725,7 +725,7 @@ Bitcoin provides financial access to:
 
 ### 2.9.4 Settlement Layer
 
-Bitcoin's base layer may function as a global settlement layer — a "digital reserve currency" for larger-value transactions, with the Lightning Network and other layers handling everyday payments. This mirrors the traditional financial system where large-value settlement systems (Fedwire, SWIFT) underlie consumer payment networks (Visa, PayPal).
+Bitcoin's base layer may function as a global settlement layer — a "digital reserve currency" for larger-value transactions, with the Lightning Network and other layers handling everyday payments. This mirrors the traditional financial system where large-value settlement systems (Fedwire, Society for Worldwide Interbank Financial Telecommunication (SWIFT)) underlie consumer payment networks (Visa, PayPal).
 
 ---
 
@@ -781,4 +781,4 @@ The following notebooks provide hands-on implementations of concepts covered in 
 
 - **`notebooks/07-mining-economics.ipynb`** (upcoming) — Mining profitability calculations, difficulty adjustment simulations, pool reward modeling, and 51% attack cost estimation.
 
-- **`notebooks/08-valuation-models.ipynb`** (upcoming) — Stock-to-Flow implementation, Metcalfe's Law, NVT ratio, and Monte Carlo price simulations.
+- **`notebooks/08-valuation-models.ipynb`** (upcoming) — Stock-to-Flow implementation, Metcalfe's Law, network value to transactions (NVT) ratio, and Monte Carlo price simulations.

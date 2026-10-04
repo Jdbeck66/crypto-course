@@ -36,7 +36,7 @@ Cryptocurrency/
 
 ### Markdown Sections
 - All technical terms defined in markdown callouts (`> **Definition: Term**`)
-- All acronyms expanded on first use: Full Name (ACRONYM)
+- All acronyms expanded on first use: Full Name (ACRONYM). This matches the rule in the AI training program (its D24) and also covers Claude's replies in sessions on this repo, each reply counting as one document. Headings, titles of works, names not used as abbreviations, file names, and units are exempt.
 - Comprehensive source citations: **Source:** Author. (Year). Title. URL
 - Clear progression from foundational concepts to advanced details
 - Cross-references to relevant notebooks

@@ -25,7 +25,7 @@
 >
 > Cryptoeconomics is an interdisciplinary field that combines cryptography and economic incentives to design secure, decentralized systems. It is not a subfield of economics per se, but rather a practical engineering discipline: using cryptographic proofs and economic rewards/penalties to shape participant behavior in distributed networks so that the system achieves desired properties (security, liveness, correctness) without relying on a trusted central authority.
 
-Cryptoeconomics is the foundational discipline underlying every blockchain protocol. Bitcoin, for instance, is not secured by cryptography alone — SHA-256 and ECDSA ensure that only key holders can authorize transactions, but they say nothing about which transactions get included in blocks or which chain is canonical. Those properties are secured by *economic incentives*: miners invest real capital in hardware and electricity, and they are rewarded with newly minted bitcoin only if they follow the rules. The combination of cryptographic guarantees and economic incentives is what makes the system work.
+Cryptoeconomics is the foundational discipline underlying every blockchain protocol. Bitcoin, for instance, is not secured by cryptography alone — Secure Hash Algorithm 256 (SHA-256) and Elliptic Curve Digital Signature Algorithm (ECDSA) ensure that only key holders can authorize transactions, but they say nothing about which transactions get included in blocks or which chain is canonical. Those properties are secured by *economic incentives*: miners invest real capital in hardware and electricity, and they are rewarded with newly minted bitcoin only if they follow the rules. The combination of cryptographic guarantees and economic incentives is what makes the system work.
 
 **The two pillars of cryptoeconomics:**
 
@@ -41,7 +41,7 @@ Christian Catalini and Joshua Gans of the Massachusetts Institute of Technology 
 **1. The Cost of Verification:**
 In traditional markets, verifying the attributes of a transaction — the identity of the counterparties, the legitimacy of assets, the enforcement of rules — requires trusted intermediaries (banks, auditors, regulators). Blockchain replaces these intermediaries with cryptographic verification that any participant can perform at near-zero marginal cost.
 
-*Example:* Verifying that Alice holds 2 BTC requires only checking the Unspent Transaction Output (UTXO) set against her public key. No bank statement, no credit bureau, no human auditor — just a deterministic computation any node can run.
+*Example:* Verifying that Alice holds 2 bitcoin (BTC) requires only checking the Unspent Transaction Output (UTXO) set against her public key. No bank statement, no credit bureau, no human auditor — just a deterministic computation any node can run.
 
 **2. The Cost of Networking:**
 Creating and operating a decentralized marketplace traditionally requires a platform intermediary (eBay, Uber, Airbnb) that extracts value through fees. Blockchain enables the creation of open networks where participants coordinate through shared protocols and cryptoeconomic incentives, reducing the power and rent-extraction of intermediaries.
@@ -157,7 +157,7 @@ Where `s_{-i}*` denotes all other miners playing the honest strategy. This holds
 |----------|-----------|----------------|----------|
 | Bitcoin (Nakamoto Consensus) | PoW + longest chain | Tolerates < 50% adversarial hash power | Probabilistic finality, high energy cost |
 | Tendermint (Cosmos) | BFT + PoS | Tolerates < 1/3 adversarial stake | Deterministic finality, smaller validator sets |
-| Casper FFG (Ethereum) | PoS + BFT finality gadget | Tolerates < 1/3 adversarial stake | Hybrid: probabilistic then deterministic finality |
+| Casper Friendly Finality Gadget (FFG; Ethereum) | PoS + BFT finality gadget | Tolerates < 1/3 adversarial stake | Hybrid: probabilistic then deterministic finality |
 | Practical BFT (PBFT) | Message-passing consensus | Tolerates < 1/3 adversarial nodes | O(n^2) message complexity, limited scalability |
 
 **Source:** Lamport, L., Shostak, R., & Pease, M. (1982). The Byzantine Generals Problem. ACM Transactions on Programming Languages and Systems, 4(3), 382-401.
@@ -306,7 +306,7 @@ Validator Revenue = Attestation Rewards + Block Proposal Rewards
 
 | Offense | Penalty | Example |
 |---------|---------|---------|
-| Double proposal | Minimum 1/32 of stake (~1 ETH) | Proposing two different blocks for the same slot |
+| Double proposal | Minimum 1/32 of stake (~1 ether (ETH)) | Proposing two different blocks for the same slot |
 | Surround vote | Minimum 1/32 of stake | Making attestations that "surround" a previous attestation |
 | Correlated slashing | Up to full stake (32 ETH) | Many validators slashed simultaneously (penalty scales with number of offenders) |
 | Inactivity leak | Gradual stake reduction | Validator offline during finality failure (quadratic penalty over time) |
@@ -388,7 +388,7 @@ The dominant strategy is to validate both — which is precisely the behavior th
 | Required stake | 32 ETH (~$96,000 at $3,000/ETH) |
 | Annual nominal yield | ~3.5-4.0% (varies with total staked) |
 | Annual ETH earned | ~1.12-1.28 ETH |
-| Annual USD earned | ~$3,360-$3,840 |
+| Annual US dollar (USD) earned | ~$3,360-$3,840 |
 | Hardware costs | $50-100/month (home staker) or ~$30/month (cloud) |
 | Electricity costs | ~$20-50/month |
 | Annual operating costs | $600-$1,800 |
@@ -482,13 +482,13 @@ Liquidity network effects are among the strongest moats in DeFi:
 More Liquidity -> Lower Slippage -> More Traders -> More Fees -> More Liquidity
 ```
 
-This creates a flywheel effect where the largest protocol in a category tends to accumulate advantages over time. Concrete example with Uniswap v3:
+This creates a flywheel effect where the largest protocol in a category tends to accumulate advantages over time. Concrete example with Uniswap v3 pools pairing ETH with USD Coin (USDC):
 
 | Pool | Total Value Locked (TVL) | Average Slippage ($100K Trade) | Daily Volume |
 |------|--------------------------|-------------------------------|-------------|
 | ETH/USDC (Uniswap) | ~$500M | ~0.05% | ~$300M |
 | ETH/USDC (SushiSwap) | ~$50M | ~0.5% | ~$30M |
-| ETH/USDC (smaller DEX) | ~$5M | ~5% | ~$3M |
+| ETH/USDC (smaller decentralized exchange (DEX)) | ~$5M | ~5% | ~$3M |
 
 A 10x difference in liquidity leads to approximately 10x lower slippage, which attracts roughly 10x more volume. This self-reinforcing dynamic explains why DeFi tends toward concentrated liquidity.
 
@@ -499,7 +499,7 @@ Two competing theses about the long-term structure of the blockchain ecosystem:
 **Winner-Take-Most (Maximalist View):**
 - Strong network effects favor a single dominant chain
 - Developers, users, and liquidity concentrate on the winning platform
-- Similar to how the internet converged on TCP/IP, one blockchain will dominate
+- Similar to how the internet converged on Transmission Control Protocol/Internet Protocol (TCP/IP), one blockchain will dominate
 - Value accrues disproportionately to the winner
 
 **Multi-Chain Equilibrium (Pluralist View):**
@@ -514,7 +514,7 @@ The empirical evidence as of 2025-2026 suggests a middle ground: Ethereum domina
 
 > **Definition: Fat Protocol Thesis**
 >
-> The fat protocol thesis, proposed by Joel Monegro of Union Square Ventures in 2016, argues that in the blockchain technology stack, the majority of value accrues to the base protocol layer (the "fat" layer) rather than the application layer (the "thin" layer). This is the inverse of the internet, where protocols (TCP/IP, HTTP) captured minimal value while applications (Google, Facebook) captured most of the value.
+> The fat protocol thesis, proposed by Joel Monegro of Union Square Ventures in 2016, argues that in the blockchain technology stack, the majority of value accrues to the base protocol layer (the "fat" layer) rather than the application layer (the "thin" layer). This is the inverse of the internet, where protocols (TCP/IP, Hypertext Transfer Protocol (HTTP)) captured minimal value while applications (Google, Facebook) captured most of the value.
 
 **Internet Stack (Thin Protocol):**
 
@@ -531,7 +531,7 @@ Protocol Layer (ETH, SOL, BTC)          █████████████�
 ```
 
 **Why protocols capture value in blockchain:**
-1. The native token (ETH, SOL) is required to use the network — every application generates demand for the base token
+1. The native token (ETH, Solana (SOL)) is required to use the network — every application generates demand for the base token
 2. The shared data layer reduces the switching cost for users across applications, preventing application-layer lock-in
 3. Speculative premium flows to the protocol token as a proxy for ecosystem growth
 
@@ -557,12 +557,12 @@ Protocol Layer (ETH, SOL, BTC)          █████████████�
 
 | Token Type | Primary Function | Value Driver | Examples |
 |------------|-----------------|--------------|----------|
-| **Utility Token** | Access to a service or network | Demand for the service | ETH (gas), FIL (storage), LINK (oracle fees) |
-| **Governance Token** | Voting rights over protocol parameters | Influence over treasury/protocol | UNI, AAVE, MKR, COMP |
+| **Utility Token** | Access to a service or network | Demand for the service | ETH (gas), Filecoin (FIL; storage), Chainlink (LINK; oracle fees) |
+| **Governance Token** | Voting rights over protocol parameters | Influence over treasury/protocol | Uniswap (UNI), AAVE, Maker (MKR), Compound (COMP) |
 | **Security Token** | Represents ownership in an asset or enterprise | Cash flows, dividends, equity-like | Tokenized stocks, real estate tokens |
-| **Stablecoin** | Maintains a stable value (usually pegged to USD) | Reliability as a medium of exchange | USDC, USDT, DAI |
-| **Staking Token** | Securing a PoS network via collateral | Staking yields + appreciation | ETH, SOL, ATOM, DOT |
-| **Wrapped/Derivative Token** | Represents another asset on a different chain | 1:1 backing by the underlying asset | WBTC, stETH, rETH |
+| **Stablecoin** | Maintains a stable value (usually pegged to USD) | Reliability as a medium of exchange | USD Coin (USDC), Tether (USDT), DAI |
+| **Staking Token** | Securing a PoS network via collateral | Staking yields + appreciation | ETH, SOL, ATOM, Polkadot (DOT) |
+| **Wrapped/Derivative Token** | Represents another asset on a different chain | 1:1 backing by the underlying asset | Wrapped Bitcoin (WBTC), stETH, rETH |
 
 Many tokens serve multiple functions simultaneously. ETH, for example, is a utility token (gas fees), a staking token (validator collateral), and increasingly a store of value — making it difficult to categorize neatly.
 
@@ -637,11 +637,11 @@ How tokens are initially distributed has profound implications for decentralizat
 
 | Distribution Method | Description | Pros | Cons | Examples |
 |---------------------|-------------|------|------|----------|
-| **Fair Launch (Mining)** | Tokens created only through mining; no pre-mine | Perceived as fair; no insider advantage | Insiders can mine early with little competition | BTC, LTC, DOGE |
+| **Fair Launch (Mining)** | Tokens created only through mining; no pre-mine | Perceived as fair; no insider advantage | Insiders can mine early with little competition | BTC, Litecoin (LTC), Dogecoin (DOGE) |
 | **Initial Coin Offering (ICO)** | Public token sale before launch | Raises capital for development | Regulatory risk; many scams; concentrated holdings | ETH (2014), EOS |
-| **Airdrop** | Free distribution to existing users/holders | Broad distribution; rewards early users | Sybil attacks; many recipients sell immediately | UNI, ENS, ARB |
+| **Airdrop** | Free distribution to existing users/holders | Broad distribution; rewards early users | Sybil attacks; many recipients sell immediately | UNI, Ethereum Name Service (ENS), Arbitrum (ARB) |
 | **Initial DEX Offering (IDO)** | Token sale through a Decentralized Exchange (DEX) | Permissionless; immediate liquidity | Front-running; bot manipulation | Various DeFi tokens |
-| **Retroactive Public Goods Funding** | Rewards based on past contributions | Incentivizes genuine participation | Complex to measure contributions fairly | OP (Optimism) |
+| **Retroactive Public Goods Funding** | Rewards based on past contributions | Incentivizes genuine participation | Complex to measure contributions fairly | Optimism (OP) |
 
 **Typical Token Allocation (Modern Protocol):**
 
@@ -943,7 +943,7 @@ Restaker's Total Risk  = Base Slashing Risk + SUM(AVS_i Slashing Risk)
 
 > **Definition: NVT Ratio (Network Value to Transactions)**
 >
-> The NVT ratio is a cryptocurrency valuation metric analogous to the Price-to-Earnings (P/E) ratio in equity markets. It divides a network's market capitalization by the daily transaction volume (measured in USD) flowing through the network. A high NVT suggests the network is overvalued relative to its usage, while a low NVT suggests undervaluation.
+> The network value to transactions (NVT) ratio is a cryptocurrency valuation metric analogous to the Price-to-Earnings (P/E) ratio in equity markets. It divides a network's market capitalization by the daily transaction volume (measured in USD) flowing through the network. A high NVT suggests the network is overvalued relative to its usage, while a low NVT suggests undervaluation.
 
 **Formula:**
 
@@ -987,7 +987,7 @@ NVT Signal = Network Market Cap / 90-Day Moving Average of Daily Transaction Vol
 
 > **Definition: MVRV Ratio (Market Value to Realized Value)**
 >
-> The MVRV ratio compares a cryptocurrency's market capitalization (calculated using the current price) to its "realized capitalization" (calculated by valuing each coin at the price it last moved on-chain). A high MVRV indicates that holders are sitting on large unrealized gains (and may be incentivized to sell), while a low MVRV indicates holders are at or below their cost basis (suggesting a potential bottom).
+> The market value to realized value (MVRV) ratio compares a cryptocurrency's market capitalization (calculated using the current price) to its "realized capitalization" (calculated by valuing each coin at the price it last moved on-chain). A high MVRV indicates that holders are sitting on large unrealized gains (and may be incentivized to sell), while a low MVRV indicates holders are at or below their cost basis (suggesting a potential bottom).
 
 **Formulas:**
 
@@ -1260,7 +1260,7 @@ Where `price_ratio` = new price / initial price.
 | -50% (0.50x) | -5.7% |
 | -75% (0.25x) | -25.5% |
 
-Liquidity providers must earn enough in trading fees to offset impermanent loss. In practice, this means high-volume pools with correlated assets (ETH/stETH) are safer, while volatile pairs (ETH/memetoken) often result in net losses for LPs.
+Liquidity providers must earn enough in trading fees to offset impermanent loss. In practice, this means high-volume pools with correlated assets (ETH/stETH) are safer, while volatile pairs (ETH/memetoken) often result in net losses for liquidity providers (LPs).
 
 ### 4.9.4 Funding Rates and Perpetual Futures
 
@@ -1316,9 +1316,9 @@ Stablecoins are the backbone of crypto market infrastructure:
 |------------|-----------|--------|---------|
 | USDT (Tether) | ~$140B | Tether Ltd. | Treasury bills, commercial paper, cash |
 | USDC (USD Coin) | ~$55B | Circle | Treasury bills, cash reserves |
-| DAI | ~$5B | MakerDAO (decentralized) | Over-collateralized crypto + RWA |
+| DAI | ~$5B | MakerDAO (decentralized) | Over-collateralized crypto + real-world asset (RWA) |
 | USDe | ~$5B | Ethena Labs | Delta-neutral crypto positions |
-| FDUSD | ~$3B | First Digital | Fiat reserves |
+| First Digital USD (FDUSD) | ~$3B | First Digital | Fiat reserves |
 
 **Systemic risk:** The crypto market's dependence on stablecoins means that a failure of USDT or USDC would have cascading effects across the entire ecosystem. USDT in particular is deeply embedded in trading pairs, DeFi protocols, and cross-border payment flows.
 
@@ -1330,7 +1330,7 @@ Stablecoins are the backbone of crypto market infrastructure:
 | **Derivatives volume** | ~99% | ~1% (growing) |
 | **Latency** | Microseconds | Seconds (block time) |
 | **User experience** | Familiar (similar to traditional brokers) | Wallet-based; steeper learning curve |
-| **KYC/AML** | Required in most jurisdictions | Generally none (pseudonymous) |
+| **Know your customer (KYC)/anti-money laundering (AML)** | Required in most jurisdictions | Generally none (pseudonymous) |
 | **Asset listing** | Curated (exchange decides) | Permissionless (anyone can create a pool) |
 | **Custody** | Custodial (exchange holds keys) | Non-custodial (user holds keys) |
 | **Regulatory risk** | High (subject to local regulations) | Lower (harder to regulate) |
@@ -1358,7 +1358,7 @@ Stablecoins are the backbone of crypto market infrastructure:
 
 7. **Staking economics require careful analysis of nominal vs real yield.** A 20% nominal yield with 18% inflation delivers only 2% real return. Liquid staking derivatives improve capital efficiency but introduce centralization and smart contract risks.
 
-8. **Multiple valuation frameworks exist, but none is fully satisfactory.** NVT, MVRV, Stock-to-Flow, Metcalfe's Law, and DCF models each capture different aspects of value. Crypto valuation remains fundamentally difficult due to reflexivity, speculative dominance, and the multi-purpose nature of tokens.
+8. **Multiple valuation frameworks exist, but none is fully satisfactory.** NVT, MVRV, Stock-to-Flow, Metcalfe's Law, and discounted cash flow (DCF) models each capture different aspects of value. Crypto valuation remains fundamentally difficult due to reflexivity, speculative dominance, and the multi-purpose nature of tokens.
 
 9. **Market microstructure in crypto differs fundamentally from traditional finance.** AMMs replace order books for decentralized trading, perpetual futures dominate derivatives markets through funding rate mechanisms, and stablecoins serve as the de facto unit of account across the ecosystem.
 

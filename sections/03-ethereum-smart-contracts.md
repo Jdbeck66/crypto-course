@@ -97,11 +97,11 @@ The **state root** — the root hash of the state trie — is included in every 
 | **Block time** | ~10 minutes | ~12 seconds |
 | **Block size** | 4 MB (weight units) | Variable (target 15M gas, max 30M gas) |
 | **State storage** | Implicit (UTXO set) | Explicit (world state trie) |
-| **Consensus (current)** | Proof-of-Work (SHA-256d) | Proof-of-Stake (Casper FFG + LMD-GHOST) |
-| **Supply policy** | Fixed at 21 million BTC | No hard cap; issuance offset by EIP-1559 fee burning |
-| **Native currency** | BTC (8 decimal places) | ETH (18 decimal places) |
+| **Consensus (current)** | Proof-of-Work (SHA-256d) | Proof-of-Stake (Casper Friendly Finality Gadget (FFG) + Latest Message Driven Greedy Heaviest Observed Subtree (LMD-GHOST)) |
+| **Supply policy** | Fixed at 21 million bitcoin (BTC) | No hard cap; issuance offset by Ethereum Improvement Proposal 1559 (EIP-1559) fee burning |
+| **Native currency** | BTC (8 decimal places) | Ether (ETH; 18 decimal places) |
 | **Primary purpose** | Value transfer, store of value | Programmable platform for decentralized applications |
-| **Smart contracts** | Very limited (time locks, multisig) | Full-featured (DeFi, NFTs, DAOs, arbitrary logic) |
+| **Smart contracts** | Very limited (time locks, multisig) | Full-featured (decentralized finance (DeFi), non-fungible tokens (NFTs), decentralized autonomous organizations (DAOs), arbitrary logic) |
 | **Transaction finality** | Probabilistic (~6 blocks / 60 min) | Probabilistic + economic finality (~2 epochs / 12.8 min) |
 
 ### 3.1.5 Ether (ETH) and Denominations
@@ -278,7 +278,7 @@ Determinism is the single most critical property of the EVM. Every node in the n
 
 **How the EVM ensures determinism:**
 - **No floating-point arithmetic** — The EVM uses only 256-bit integer arithmetic. Floating-point operations can produce different results on different hardware due to rounding differences.
-- **No access to external data** — Contracts cannot make HTTP requests, read files, or access random number generators. External data must be brought on-chain by oracle contracts.
+- **No access to external data** — Contracts cannot make Hypertext Transfer Protocol (HTTP) requests, read files, or access random number generators. External data must be brought on-chain by oracle contracts.
 - **No multithreading** — All execution is single-threaded and sequential within a transaction. Concurrent execution could produce race conditions.
 - **Gas limits** — Execution is bounded, preventing infinite loops or non-terminating programs.
 - **Fixed instruction set** — All nodes run the same set of opcodes with identical semantics.
@@ -287,7 +287,7 @@ The consequence: any data a smart contract needs from the real world (prices, we
 
 > **Definition: Oracle**
 >
-> An oracle is a service that provides external (off-chain) data to smart contracts on the blockchain. Since smart contracts cannot access external APIs or data sources directly (doing so would break determinism), oracles act as bridges between the blockchain and the real world. Chainlink is the most widely used decentralized oracle network.
+> An oracle is a service that provides external (off-chain) data to smart contracts on the blockchain. Since smart contracts cannot access external application programming interfaces (APIs) or data sources directly (doing so would break determinism), oracles act as bridges between the blockchain and the real world. Chainlink is the most widely used decentralized oracle network.
 
 **Source:** Antonopoulos, A. & Wood, G. (2018). Mastering Ethereum. Chapter 13: The Ethereum Virtual Machine. O'Reilly Media. https://github.com/ethereumbook/ethereumbook
 
@@ -424,7 +424,7 @@ Since the Merge (September 2022), ETH has been net deflationary during periods o
 | Transaction Type | Typical Gas Used | Cost at 20 Gwei | Cost at 100 Gwei |
 |-----------------|-----------------|-----------------|------------------|
 | Simple ETH transfer | 21,000 | 0.00042 ETH | 0.0021 ETH |
-| ERC-20 token transfer | 65,000 | 0.0013 ETH | 0.0065 ETH |
+| Ethereum Request for Comments 20 (ERC-20) token transfer | 65,000 | 0.0013 ETH | 0.0065 ETH |
 | ERC-20 approval | 46,000 | 0.00092 ETH | 0.0046 ETH |
 | Uniswap swap | 150,000 | 0.003 ETH | 0.015 ETH |
 | NFT mint (ERC-721) | 150,000-250,000 | 0.003-0.005 ETH | 0.015-0.025 ETH |
@@ -921,7 +921,7 @@ The smart contract security ecosystem includes:
 
 > **Definition: ERC-20**
 >
-> ERC-20 (Ethereum Request for Comments 20) is the technical standard for fungible tokens on Ethereum, proposed by Fabian Vogelsteller and Vitalik Buterin in November 2015. Fungible means every token is identical and interchangeable — one USDC is always equal to any other USDC, just as one dollar bill is equal to any other dollar bill. ERC-20 defines a common interface that all fungible tokens implement, enabling interoperability across wallets, exchanges, and DeFi protocols.
+> ERC-20 (Ethereum Request for Comments 20) is the technical standard for fungible tokens on Ethereum, proposed by Fabian Vogelsteller and Vitalik Buterin in November 2015. Fungible means every token is identical and interchangeable — one USD Coin (USDC) is always equal to any other USDC, just as one dollar bill is equal to any other dollar bill. ERC-20 defines a common interface that all fungible tokens implement, enabling interoperability across wallets, exchanges, and DeFi protocols.
 
 **Required interface:**
 
@@ -938,7 +938,7 @@ The smart contract security ecosystem includes:
 - `Transfer(from, to, value)` — Emitted on every transfer (including mints and burns)
 - `Approval(owner, spender, value)` — Emitted when an allowance is set
 
-**Use cases:** Stablecoins (USDC, USDT, DAI), governance tokens (UNI, AAVE, MKR), utility tokens, wrapped assets (WETH, WBTC).
+**Use cases:** Stablecoins (USDC, Tether (USDT), DAI), governance tokens (Uniswap (UNI), AAVE, Maker (MKR)), utility tokens, wrapped assets (wrapped ether (WETH), Wrapped Bitcoin (WBTC)).
 
 **Limitations:**
 - The approve/transferFrom pattern requires two transactions for a contract to spend tokens on a user's behalf
@@ -971,7 +971,7 @@ function symbol() external view returns (string);
 function tokenURI(uint256 tokenId) external view returns (string);
 ```
 
-The `tokenURI` function returns a URI pointing to a JSON file with metadata:
+The `tokenURI` function returns a Uniform Resource Identifier (URI) pointing to a JavaScript Object Notation (JSON) file with metadata:
 ```json
 {
     "name": "CryptoPunk #7804",
@@ -1078,7 +1078,7 @@ Ethereum launched in 2015 with a Proof-of-Work (PoW) consensus mechanism similar
 
 **Motivations for the transition:**
 
-1. **Energy consumption** — Ethereum's PoW consumed approximately 112 TWh/year at its peak (comparable to the Netherlands), primarily due to GPU mining. PoS reduced this by ~99.95%.
+1. **Energy consumption** — Ethereum's PoW consumed approximately 112 TWh/year at its peak (comparable to the Netherlands), primarily due to graphics processing unit (GPU) mining. PoS reduced this by ~99.95%.
 
 2. **Centralization pressure** — PoW mining was increasingly dominated by large operations with access to cheap electricity and specialized hardware. PoS allows anyone with 32 ETH and consumer hardware to validate.
 
@@ -1107,7 +1107,7 @@ The Merge was the event where Ethereum's execution layer (transactions, smart co
 
 **Key facts about the Merge:**
 - No downtime — the transition was seamless, with zero interruption to the network
-- No change to user experience — transactions, addresses, smart contracts, and DApps continued to function identically
+- No change to user experience — transactions, addresses, smart contracts, and decentralized applications (DApps) continued to function identically
 - Mining ceased permanently — Ethereum miners' GPU hardware could no longer produce blocks
 - Block time changed from variable (~13 seconds average) to fixed 12-second slots
 - Considered one of the most complex live infrastructure upgrades in software history
@@ -1132,14 +1132,14 @@ The Merge was the event where Ethereum's execution layer (transactions, smart co
 1. Deposit exactly 32 ETH into the deposit contract (the minimum stake)
 2. Run an execution client (Geth, Nethermind, Besu, Erigon) and a consensus client (Prysm, Lighthouse, Teku, Nimbus, Lodestar)
 3. Maintain uptime — the validator must be online to perform duties
-4. Hardware requirements: consumer-grade (4+ core CPU, 16+ GB RAM, 2+ TB SSD, stable internet)
+4. Hardware requirements: consumer-grade (4+ core central processing unit (CPU), 16+ GB random-access memory (RAM), 2+ TB solid-state drive (SSD), stable internet)
 
 **Validator economics:**
 
 | Parameter | Value |
 |-----------|-------|
 | Minimum stake | 32 ETH |
-| Annual yield (approximate) | 3-5% APR (varies with total staked and network activity) |
+| Annual yield (approximate) | 3-5% annual percentage rate (APR; varies with total staked and network activity) |
 | Source of rewards | Issuance + priority tips + MEV |
 | Withdrawal delay | Variable queue, typically minutes to days |
 
@@ -1272,20 +1272,20 @@ Layer 2 solutions address this by moving execution off-chain while anchoring sec
 
 **Challenge period tradeoff:**
 - The 7-day challenge window is necessary for security — it provides enough time for honest verifiers to detect and prove fraud
-- However, it means withdrawals from L2 to L1 take 7 days
+- However, it means withdrawals from Layer 2 (L2) to Layer 1 (L1) take 7 days
 - Third-party liquidity bridges (e.g., Across, Hop Protocol) offer faster withdrawals by fronting the funds for a fee
 
 **Major Optimistic Rollups:**
 
-| Rollup | Key Features | TPS | Notes |
+| Rollup | Key Features | Transactions per second (TPS) | Notes |
 |--------|-------------|-----|-------|
-| **Arbitrum** | Nitro architecture, WASM-based fraud proofs, Stylus (Rust/C++ smart contracts) | ~40,000 (theoretical) | Largest L2 by TVL |
+| **Arbitrum** | Nitro architecture, fraud proofs based on WebAssembly (WASM), Stylus (Rust/C++ smart contracts) | ~40,000 (theoretical) | Largest L2 by total value locked (TVL) |
 | **Optimism** | OP Stack (modular rollup framework), Bedrock upgrade, revenue sharing | ~2,000 | Powers the Superchain vision |
 | **Base** | Built on OP Stack, operated by Coinbase, no native token | ~2,000 | Fastest-growing L2 by users |
 
 ### 3.8.3 ZK-Rollups
 
-> **Definition: ZK-Rollup (Zero-Knowledge Rollup)**
+> **Definition: Zero-Knowledge Rollup (ZK-Rollup)**
 >
 > A ZK-Rollup is a Layer 2 scaling solution that executes transactions off-chain and generates a cryptographic validity proof (a zero-knowledge proof or ZK proof) that proves the correctness of all transactions in the batch. This proof is verified on Ethereum by a smart contract. Unlike Optimistic Rollups, ZK-Rollups do not require a challenge period — once the proof is verified, the transactions are considered final.
 
@@ -1296,13 +1296,13 @@ Layer 2 solutions address this by moving execution off-chain while anchoring sec
 **How ZK-Rollups work:**
 
 1. **Execution** — Transactions are collected and executed off-chain by the sequencer
-2. **Proof generation** — A specialized prover generates a validity proof (SNARK or STARK) that cryptographically attests to the correctness of all state transitions
+2. **Proof generation** — A specialized prover generates a validity proof (succinct non-interactive argument of knowledge (SNARK) or scalable transparent argument of knowledge (STARK)) that cryptographically attests to the correctness of all state transitions
 3. **On-chain verification** — The proof is submitted to a verifier contract on Ethereum, which checks the proof (verification is cheap: ~200,000-500,000 gas regardless of how many transactions were in the batch)
 4. **State update** — Once the proof is verified, the new state root is accepted as valid
 
 **Types of zero-knowledge proofs:**
 
-| Property | zk-SNARKs | zk-STARKs |
+| Property | Zero-knowledge succinct non-interactive arguments of knowledge (zk-SNARKs) | Zero-knowledge scalable transparent arguments of knowledge (zk-STARKs) |
 |----------|-----------|-----------|
 | Full name | Zero-Knowledge Succinct Non-interactive Arguments of Knowledge | Zero-Knowledge Scalable Transparent Arguments of Knowledge |
 | Proof size | Small (~200 bytes) | Larger (~50-100 KB) |
@@ -1310,7 +1310,7 @@ Layer 2 solutions address this by moving execution off-chain while anchoring sec
 | Trusted setup | Required (vulnerability if compromised) | Not required (transparent) |
 | Quantum resistance | No | Yes |
 | Prover time | Faster | Slower |
-| Used by | zkSync, Polygon zkEVM, Scroll | StarkNet |
+| Used by | zkSync, Polygon zero-knowledge Ethereum Virtual Machine (zkEVM), Scroll | StarkNet |
 
 **Major ZK-Rollups:**
 
@@ -1354,7 +1354,7 @@ Rollups post transaction data to Ethereum calldata, which is stored permanently 
 **Key concepts:**
 - **Blob** — A ~128 KB data chunk attached to a transaction. Each block can contain up to 6 blobs (target 3).
 - **Blob fee market** — Separate from the regular gas market, with its own EIP-1559-style base fee mechanism
-- **KZG commitments** — A polynomial commitment scheme used to verify blob data without downloading entire blobs (enables future data availability sampling)
+- **Kate-Zaverucha-Goldberg (KZG) commitments** — A polynomial commitment scheme used to verify blob data without downloading entire blobs (enables future data availability sampling)
 - **Pruning** — Blob data is available for ~18 days, then deleted. This is sufficient for rollup verification but does not permanently bloat the chain.
 
 **Impact on rollup costs:**
@@ -1443,8 +1443,8 @@ Ethereum's development roadmap (as articulated by Vitalik Buterin) is organized 
 
 **Key initiatives:**
 - **Account abstraction (ERC-4337 and beyond)** — Making all accounts smart contract accounts, enabling social recovery, gas sponsorship, batched transactions, and custom signature schemes
-- **EVM improvements** — EOF (EVM Object Format) for better code validation and versioning
-- **Cryptographic upgrades** — BLS signature aggregation, precompiles for new cryptographic primitives
+- **EVM improvements** — EVM Object Format (EOF) for better code validation and versioning
+- **Cryptographic upgrades** — Boneh-Lynn-Shacham (BLS) signature aggregation, precompiles for new cryptographic primitives
 - **Protocol simplification** — Removing technical debt, deprecated opcodes, and unnecessary complexity
 
 **Source:** Buterin, V. (2023). The Ethereum Roadmap. https://ethereum.org/en/roadmap/
@@ -1512,4 +1512,4 @@ The following notebooks provide hands-on implementations of concepts covered in 
 
 - **`notebooks/04-smart-contract-development.ipynb`** (upcoming) — Write, compile, deploy, and test Solidity smart contracts using Brownie or Foundry. Implement an ERC-20 token from scratch, deploy to a local testnet, and interact with it programmatically. Includes exercises on common vulnerability patterns (reentrancy, access control) and their mitigations.
 
-- **`notebooks/05-defi-protocols.ipynb`** (upcoming) — Analyze DeFi protocols built on Ethereum: simulate Uniswap constant-product AMM pricing, calculate impermanent loss, model Aave liquidation mechanics, and explore ERC-4626 vault share pricing. Integrates with the token standards covered in Section 3.6.
+- **`notebooks/05-defi-protocols.ipynb`** (upcoming) — Analyze DeFi protocols built on Ethereum: simulate Uniswap constant-product automated market maker (AMM) pricing, calculate impermanent loss, model Aave liquidation mechanics, and explore ERC-4626 vault share pricing. Integrates with the token standards covered in Section 3.6.

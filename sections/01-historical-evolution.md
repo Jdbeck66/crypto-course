@@ -44,8 +44,8 @@ Key cypherpunks who would later influence cryptocurrency development included:
 | Adam Back | Hashcash | Proof-of-work concept used in Bitcoin |
 | Wei Dai | b-money | Proposed decentralized digital currency |
 | Nick Szabo | Bit Gold, smart contracts | Closest precursor to Bitcoin |
-| Hal Finney | RPOW (Reusable Proof of Work) | Received first Bitcoin transaction |
-| Phil Zimmermann | PGP (Pretty Good Privacy) | Popularized public-key cryptography |
+| Hal Finney | Reusable Proof of Work (RPOW) | Received first Bitcoin transaction |
+| Phil Zimmermann | Pretty Good Privacy (PGP) | Popularized public-key cryptography |
 
 ### 1.1.2 David Chaum and DigiCash (1989-1998)
 
@@ -168,7 +168,7 @@ RPOW solved a limitation of Hashcash: in Hashcash, each proof-of-work token coul
 
 The system relied on a trusted server running on IBM 4758 secure cryptographic hardware, which could prove to remote users that it was running the correct software (a concept called "trusted computing"). This was its key limitation — it still required a trusted central server.
 
-Finney would later become the recipient of the first-ever Bitcoin transaction from Satoshi Nakamoto on January 12, 2009 (Block 170, 10 BTC).
+Finney would later become the recipient of the first-ever Bitcoin transaction from Satoshi Nakamoto on January 12, 2009 (Block 170, 10 bitcoin (BTC)).
 
 **Source:** Finney, H. (2004). RPOW - Reusable Proofs of Work. https://nakamotoinstitute.org/finney/rpow/
 
@@ -255,7 +255,7 @@ This headline from The Times newspaper served dual purposes: it proved the block
 | Oct 5, 2009 | First exchange rate: 1,309.03 BTC = $1 (based on electricity cost of mining) |
 | May 22, 2010 | "Bitcoin Pizza Day": Laszlo Hanyecz pays 10,000 BTC for two pizzas (~$41 at the time) |
 | Jul 2010 | Mt. Gox exchange launches |
-| Feb 2011 | Bitcoin reaches $1.00 parity with USD |
+| Feb 2011 | Bitcoin reaches $1.00 parity with US dollar (USD) |
 | Apr 2011 | Satoshi's last known communication |
 | Jun 2011 | Bitcoin reaches $31, then crashes to $2 (first major bubble/crash cycle) |
 
@@ -272,13 +272,13 @@ The Silk Road, launched in February 2011 by Ross Ulbricht (pseudonym "Dread Pira
 - It highlighted Bitcoin's pseudonymous (not anonymous) nature
 - It attracted mainstream media attention to Bitcoin
 
-The FBI shut down the Silk Road in October 2013 and arrested Ulbricht, who was sentenced to life in prison. The seizure included approximately 144,000 BTC.
+The Federal Bureau of Investigation (FBI) shut down the Silk Road in October 2013 and arrested Ulbricht, who was sentenced to life in prison. The seizure included approximately 144,000 BTC.
 
 The Silk Road era illustrated an important nuance about Bitcoin privacy:
 
 > **Definition: Pseudonymity**
 >
-> Pseudonymity means operating under a false name or identifier. Bitcoin is pseudonymous, not anonymous — transactions are publicly visible on the blockchain and linked to addresses (pseudonyms). If an address can be linked to a real-world identity through exchange records, IP addresses, or transaction analysis, all associated transactions become traceable.
+> Pseudonymity means operating under a false name or identifier. Bitcoin is pseudonymous, not anonymous — transactions are publicly visible on the blockchain and linked to addresses (pseudonyms). If an address can be linked to a real-world identity through exchange records, Internet Protocol (IP) addresses, or transaction analysis, all associated transactions become traceable.
 
 ### 1.2.5 Mt. Gox and Early Infrastructure (2010-2014)
 
@@ -336,7 +336,7 @@ In late 2013, Vitalik Buterin, a 19-year-old Russian-Canadian programmer and Bit
 Ethereum introduced several architectural innovations beyond Bitcoin:
 
 **1. Account-Based Model:**
-Unlike Bitcoin's UTXO (Unspent Transaction Output) model, Ethereum uses an account-based model with two types of accounts:
+Unlike Bitcoin's Unspent Transaction Output (UTXO) model, Ethereum uses an account-based model with two types of accounts:
 - **Externally Owned Accounts (EOAs):** Controlled by private keys, held by users
 - **Contract Accounts:** Controlled by smart contract code, activated by transactions
 
@@ -352,7 +352,7 @@ The EVM executes compiled smart contract code in a deterministic, sandboxed envi
 
 > **Definition: Gas**
 >
-> Gas is the unit of measurement for computational effort required to execute operations on the Ethereum network. Each operation (addition, multiplication, storage write, etc.) costs a specific amount of gas. Users pay for gas in ETH (Ether, Ethereum's native currency). The gas mechanism prevents infinite loops and spam by making computation cost real money.
+> Gas is the unit of measurement for computational effort required to execute operations on the Ethereum network. Each operation (addition, multiplication, storage write, etc.) costs a specific amount of gas. Users pay for gas in ether (ETH), Ethereum's native currency. The gas mechanism prevents infinite loops and spam by making computation cost real money.
 
 Each computational step costs a specific amount of gas, and users must pay for gas in ETH. This mechanism:
 - Prevents infinite loops (programs run out of gas)
@@ -361,7 +361,7 @@ Each computational step costs a specific amount of gas, and users must pay for g
 - Compensates validators for computational resources
 
 **4. Solidity:**
-Gavin Wood, Ethereum's co-founder and CTO, designed Solidity — a high-level, contract-oriented programming language syntactically similar to JavaScript. Solidity compiles to EVM bytecode and became the dominant language for smart contract development.
+Gavin Wood, Ethereum's co-founder and chief technology officer (CTO), designed Solidity — a high-level, contract-oriented programming language syntactically similar to JavaScript. Solidity compiles to EVM bytecode and became the dominant language for smart contract development.
 
 **Source:** Wood, G. (2014). Ethereum: A Secure Decentralised Generalised Transaction Ledger (Yellow Paper). https://ethereum.github.io/yellowpaper/paper.pdf
 
@@ -375,7 +375,7 @@ Gavin Wood, Ethereum's co-founder and CTO, designed Solidity — a high-level, c
 | Jul-Aug 2014 | Ethereum crowdsale raises ~$18 million in BTC (31,529 BTC) |
 | Jul 30, 2015 | Ethereum mainnet launches ("Frontier" release) |
 | Mar 2016 | "Homestead" release — first production-ready version |
-| Apr 2016 | The DAO launches, raising $150 million in ETH |
+| Apr 2016 | The decentralized autonomous organization (DAO) launches, raising $150 million in ETH |
 | Jun 2016 | The DAO hack — attacker drains $60 million |
 | Jul 2016 | Ethereum hard forks to reverse The DAO hack |
 
@@ -409,7 +409,7 @@ This decision remains one of the most debated events in blockchain history. It e
 
 > **Definition: ERC-20**
 >
-> ERC-20 (Ethereum Request for Comments 20) is a technical standard for fungible tokens on the Ethereum blockchain. It defines a common set of rules that all Ethereum tokens must follow, including functions for transferring tokens, checking balances, and approving third-party spending. This standardization enabled tokens to be immediately compatible with wallets, exchanges, and other smart contracts.
+> Ethereum Request for Comments 20 (ERC-20) is a technical standard for fungible tokens on the Ethereum blockchain. It defines a common set of rules that all Ethereum tokens must follow, including functions for transferring tokens, checking balances, and approving third-party spending. This standardization enabled tokens to be immediately compatible with wallets, exchanges, and other smart contracts.
 
 In November 2015, Fabian Vogelsteller proposed the ERC-20 token standard, which defined a common interface for fungible tokens on Ethereum. The standard specified six mandatory functions:
 
@@ -467,7 +467,7 @@ The ICO bubble burst in 2018 for several reasons:
 4. **Market correction:** Bitcoin fell from its December 2017 peak of ~$20,000 to ~$3,200 by December 2018, dragging the entire market down
 
 The ICO era, while destructive in many ways, had lasting positive effects:
-- It funded legitimate projects that became foundational to DeFi (Chainlink, Aave, etc.)
+- It funded legitimate projects that became foundational to decentralized finance (DeFi): Chainlink, Aave, etc.
 - It demonstrated massive demand for decentralized fundraising
 - It accelerated Ethereum development and ecosystem growth
 - It prompted regulatory frameworks that would benefit later token offerings
@@ -529,7 +529,7 @@ Where:
   k = constant (product must remain the same after every trade)
 ```
 
-Example: A pool contains 10 ETH and 30,000 USDC (k = 300,000). To buy 1 ETH:
+Example: A pool contains 10 ETH and 30,000 USD Coin (USDC), so k = 300,000. To buy 1 ETH:
 - New ETH in pool: 9
 - Required USDC: 300,000 / 9 = 33,333.33
 - Cost to buyer: 33,333.33 - 30,000 = 3,333.33 USDC per ETH
@@ -563,7 +563,7 @@ Chainlink, launched in 2017, became the dominant oracle network, providing price
 
 ### 1.5.3 DeFi Summer (2020)
 
-"DeFi Summer" refers to the explosive growth of DeFi from June to September 2020, catalyzed by Compound's introduction of liquidity mining (distributing COMP governance tokens to users of the protocol).
+"DeFi Summer" refers to the explosive growth of DeFi from June to September 2020, catalyzed by Compound's introduction of liquidity mining (distributing Compound (COMP) governance tokens to users of the protocol).
 
 > **Definition: Liquidity Mining / Yield Farming**
 >
@@ -590,7 +590,7 @@ As DeFi grew, so did MEV extraction. Because pending transactions are visible in
 - **Front-running:** Seeing a large swap on Uniswap in the mempool and placing the same swap ahead of it to profit from the price impact
 - **Sandwich attacks:** Placing a buy before and a sell after a victim's swap, profiting from the price movement caused by the victim's transaction
 - **Liquidation:** Racing to liquidate undercollateralized loans for the liquidation bonus
-- **Arbitrage:** Exploiting price differences between DEXs
+- **Arbitrage:** Exploiting price differences between decentralized exchanges (DEXs)
 
 Phil Daian's 2019 paper "Flash Boys 2.0" described Ethereum's mempool as a "dark forest" where predatory bots hunted for profit opportunities, often at the expense of ordinary users.
 
@@ -639,14 +639,14 @@ The Web 3 vision extends blockchain beyond finance to reimagine internet infrast
 **Key Web 3 infrastructure:**
 
 - **IPFS (InterPlanetary File System):** Decentralized file storage and content addressing
-- **ENS (Ethereum Name Service):** Decentralized domain names (e.g., vitalik.eth)
+- **Ethereum Name Service (ENS):** Decentralized domain names (e.g., vitalik.eth)
 - **The Graph:** Decentralized indexing and querying of blockchain data
 - **Arweave:** Permanent, decentralized data storage
 - **Filecoin:** Incentivized decentralized storage network
 
 **Criticism of Web 3:**
 Web 3 has faced significant criticism:
-- Many "decentralized" applications still rely on centralized infrastructure (cloud hosting, APIs)
+- Many "decentralized" applications still rely on centralized infrastructure (cloud hosting, application programming interfaces (APIs))
 - Token-based governance can concentrate power in wealthy holders (plutocracy)
 - User experience remains far more complex than Web 2 alternatives
 - Scalability limitations restrict the types of applications that are feasible
@@ -668,7 +668,7 @@ On September 15, 2022, Ethereum completed "The Merge" — transitioning from Pro
 
 - **Energy reduction:** ~99.95% decrease in energy consumption
 - **Issuance reduction:** New ETH issuance dropped by ~90%
-- **Staking:** ETH holders can now stake their ETH to become validators and earn rewards (~3-5% APR)
+- **Staking:** ETH holders can now stake their ETH to become validators and earn rewards (~3-5% annual percentage rate (APR))
 - **No disruption:** The transition occurred without any downtime or user-facing changes
 
 **Source:** Ethereum Foundation. (2022). The Merge. https://ethereum.org/en/roadmap/merge/
@@ -678,7 +678,7 @@ On September 15, 2022, Ethereum completed "The Merge" — transitioning from Pro
 2022 was marked by a series of collapses that shook the industry:
 
 **Terra/Luna collapse (May 2022):**
-The Terra blockchain's algorithmic stablecoin UST lost its $1 peg and entered a "death spiral" with its companion token LUNA. Both tokens went to near-zero, destroying approximately $40 billion in value. The collapse demonstrated the fundamental fragility of algorithmic stablecoins that lack sufficient collateral backing.
+The Terra blockchain's algorithmic stablecoin TerraUSD (UST) lost its $1 peg and entered a "death spiral" with its companion token LUNA. Both tokens went to near-zero, destroying approximately $40 billion in value. The collapse demonstrated the fundamental fragility of algorithmic stablecoins that lack sufficient collateral backing.
 
 **Three Arrows Capital (June 2022):**
 The crypto hedge fund Three Arrows Capital (3AC) collapsed after heavy exposure to Terra/Luna and leveraged positions. Its bankruptcy had cascading effects across the industry.
@@ -694,7 +694,7 @@ FTX, the third-largest cryptocurrency exchange, filed for bankruptcy after revel
 
 > **Definition: Layer 2 (L2)**
 >
-> A Layer 2 is a secondary framework or protocol built on top of a Layer 1 blockchain (like Ethereum) to improve scalability and reduce transaction costs. L2 solutions process transactions off the main chain while inheriting the security guarantees of the underlying L1. The two main types are Optimistic Rollups (assume transactions are valid, allow fraud challenges) and Zero-Knowledge Rollups (use cryptographic proofs to verify transaction validity).
+> A Layer 2 is a secondary framework or protocol built on top of a Layer 1 blockchain (like Ethereum) to improve scalability and reduce transaction costs. Layer 2 (L2) solutions process transactions off the main chain while inheriting the security guarantees of the underlying Layer 1 (L1). The two main types are Optimistic Rollups (assume transactions are valid, allow fraud challenges) and Zero-Knowledge Rollups (use cryptographic proofs to verify transaction validity).
 
 Layer 2 solutions have become a major focus for scaling Ethereum:
 
@@ -706,7 +706,7 @@ Layer 2 solutions have become a major focus for scaling Ethereum:
 **Zero-Knowledge (ZK) Rollups:**
 - Execute transactions off-chain and generate cryptographic validity proofs
 - Proofs are verified on Ethereum, providing immediate finality
-- Examples: zkSync, StarkNet, Polygon zkEVM, Scroll
+- Examples: zkSync, StarkNet, Polygon zero-knowledge Ethereum Virtual Machine (zkEVM), Scroll
 
 By 2025, Layer 2 networks collectively process more transactions than Ethereum mainnet, with significantly lower fees (often under $0.01 per transaction compared to several dollars on mainnet).
 
@@ -742,8 +742,8 @@ The crypto ecosystem in 2025-2026 is characterized by:
 1. **Maturation:** Increased regulatory clarity, institutional participation, and infrastructure development
 2. **Scaling solutions:** Layer 2 networks enabling high throughput and low-cost transactions
 3. **Real-world integration:** Tokenization of traditional assets, stablecoin adoption for payments
-4. **AI intersection:** Growing convergence of artificial intelligence and blockchain (decentralized compute, AI agents with wallets)
-5. **Continued challenges:** Regulatory uncertainty in key jurisdictions, security vulnerabilities, UX complexity, and the ongoing tension between decentralization and usability
+4. **Artificial intelligence (AI) intersection:** Growing convergence of artificial intelligence and blockchain (decentralized compute, AI agents with wallets)
+5. **Continued challenges:** Regulatory uncertainty in key jurisdictions, security vulnerabilities, user experience (UX) complexity, and the ongoing tension between decentralization and usability
 
 ---
 
@@ -800,7 +800,7 @@ The crypto ecosystem in 2025-2026 is characterized by:
 
 The following notebooks provide hands-on implementations of concepts covered in this section:
 
-- **`notebooks/01-cryptographic-primitives.ipynb`** — Implement SHA-256, ECDSA key pairs, digital signatures, Merkle trees, and proof-of-work. Understand the cryptographic foundations that all blockchain systems share.
+- **`notebooks/01-cryptographic-primitives.ipynb`** — Implement Secure Hash Algorithm 256 (SHA-256), Elliptic Curve Digital Signature Algorithm (ECDSA) key pairs, digital signatures, Merkle trees, and proof-of-work. Understand the cryptographic foundations that all blockchain systems share.
 
 - **`notebooks/02-bitcoin-blockchain-analysis.ipynb`** (upcoming) — Connect to Bitcoin nodes, parse blocks and transactions, analyze the UTXO set, and calculate network metrics using real blockchain data.
 

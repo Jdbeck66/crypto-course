@@ -124,7 +124,7 @@ Example (attacker with 30% hash power):
 **Weaknesses:**
 - Enormous energy consumption (~150 TWh/year for Bitcoin, comparable to some countries)
 - Low throughput (Bitcoin: ~7 TPS; Ethereum pre-Merge: ~15 TPS)
-- Tendency toward mining centralization (ASIC manufacturers, pool operators)
+- Tendency toward mining centralization (application-specific integrated circuit (ASIC) manufacturers, pool operators)
 - Slow finality (minutes to hours)
 
 **Source:** Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System. https://bitcoin.org/bitcoin.pdf
@@ -147,13 +147,13 @@ Example (attacker with 30% hash power):
 > Slashing is a penalty mechanism in Proof-of-Stake systems where a validator's staked collateral is partially or fully destroyed as punishment for provably malicious behavior (such as signing two conflicting blocks) or severe negligence (such as extended downtime). Slashing provides the economic disincentive that replaces Proof-of-Work's energy expenditure.
 
 **Ethereum's PoS implementation (post-Merge, September 2022):**
-- Minimum stake: 32 ETH per validator
+- Minimum stake: 32 ether (ETH) per validator
 - Validator count: ~1,000,000+ validators (as of 2025)
 - Block time: 12 seconds (fixed slots)
 - Epoch: 32 slots (6.4 minutes)
 - Finality: ~12.8 minutes (2 epochs)
 - Slashing penalties: 1/32 of stake for minor offenses, up to full stake for correlated attacks
-- Annual yield: ~3-5% APR (varies with total staked ETH and network activity)
+- Annual yield: ~3-5% annual percentage rate (APR; varies with total staked ETH and network activity)
 
 **Finality model: Economic (deterministic with caveats)**
 Once a block is finalized (attested by 2/3+ of stake), reversing it requires at least 1/3 of all staked ETH to be slashed — a cost of billions of dollars. This provides much stronger finality guarantees than PoW's probabilistic model.
@@ -243,7 +243,7 @@ This quadratic scaling limits pBFT to small validator sets (typically under 100)
 
 > **Definition: Proof-of-History (PoH)**
 >
-> Proof-of-History is a cryptographic clock mechanism developed by Solana that creates a verifiable, ordered record of events over time. PoH uses a sequential chain of SHA-256 hashes, where each hash depends on the previous one, creating a provable passage of time without requiring validators to communicate to agree on ordering. PoH is not a consensus mechanism by itself but a pre-consensus ordering tool used alongside Solana's Tower BFT consensus.
+> Proof-of-History is a cryptographic clock mechanism developed by Solana that creates a verifiable, ordered record of events over time. PoH uses a sequential chain of Secure Hash Algorithm 256 (SHA-256) hashes, where each hash depends on the previous one, creating a provable passage of time without requiring validators to communicate to agree on ordering. PoH is not a consensus mechanism by itself but a pre-consensus ordering tool used alongside Solana's Tower Byzantine fault tolerance (BFT) consensus.
 
 **How PoH works:**
 1. A designated leader runs a continuous loop: `hash(n+1) = SHA-256(hash(n))`
@@ -317,7 +317,7 @@ This section examines six major Layer 1 platforms in depth, focusing on architec
 
 **Architecture:**
 
-Ethereum uses an account-based model (in contrast to Bitcoin's UTXO model) with two types of accounts:
+Ethereum uses an account-based model (in contrast to Bitcoin's unspent transaction output (UTXO) model) with two types of accounts:
 - **Externally Owned Accounts (EOAs):** Controlled by private keys, used by humans
 - **Contract Accounts:** Controlled by smart contract code, activated when called by an EOA or another contract
 
@@ -325,10 +325,10 @@ Ethereum uses an account-based model (in contrast to Bitcoin's UTXO model) with 
 
 > **Definition: Gas (Ethereum)**
 >
-> Gas is the unit of computation on Ethereum. Every operation in the EVM has a gas cost, and users pay for gas in ETH. Gas serves two purposes: (1) it prevents infinite loops and denial-of-service attacks by imposing a finite cost on computation, and (2) it compensates validators for the resources consumed. After EIP-1559, each block has a base fee (burned) and an optional priority fee (paid to validators).
+> Gas is the unit of computation on Ethereum. Every operation in the EVM has a gas cost, and users pay for gas in ETH. Gas serves two purposes: (1) it prevents infinite loops and denial-of-service attacks by imposing a finite cost on computation, and (2) it compensates validators for the resources consumed. After Ethereum Improvement Proposal 1559 (EIP-1559), each block has a base fee (burned) and an optional priority fee (paid to validators).
 
 **Post-Merge consensus:**
-- Consensus: Proof-of-Stake (Gasper = Casper FFG + LMD-GHOST)
+- Consensus: Proof-of-Stake (Gasper = Casper Friendly Finality Gadget (FFG) + Latest Message Driven Greedy Heaviest Observed Subtree (LMD-GHOST))
 - Block time: 12 seconds
 - Finality: ~12.8 minutes (2 epochs)
 - Minimum stake: 32 ETH per validator
@@ -339,14 +339,14 @@ Ethereum uses an account-based model (in contrast to Bitcoin's UTXO model) with 
 Ethereum's long-term scaling strategy centers on rollups rather than increasing base-layer throughput. The roadmap includes:
 - **Danksharding:** A sharding approach focused on providing cheap data availability for rollups
 - **EIP-4844 (Proto-Danksharding / "Blobs"):** Implemented in March 2024, introduces "blob" transactions that provide temporary, cheap data storage for rollup proofs, reducing Layer 2 fees by 10-100x
-- **The Surge, Scourge, Verge, Purge, Splurge:** Buterin's named roadmap phases addressing scalability, MEV resistance, statelessness, state expiry, and remaining improvements
+- **The Surge, Scourge, Verge, Purge, Splurge:** Buterin's named roadmap phases addressing scalability, maximal extractable value (MEV) resistance, statelessness, state expiry, and remaining improvements
 
 **Ecosystem dominance:**
-- DeFi Total Value Locked (TVL): ~$50-60 billion on Ethereum mainnet (dominates all other chains)
+- Decentralized finance (DeFi) Total Value Locked (TVL): ~$50-60 billion on Ethereum mainnet (dominates all other chains)
 - Developer count: Largest developer community of any blockchain (~6,000+ monthly active developers)
-- ERC-20 tokens: Thousands of fungible tokens deployed
-- NFT market: Origin of the ERC-721 standard; largest NFT ecosystem
-- Layer 2 ecosystem: Arbitrum, Optimism, Base, zkSync, StarkNet, Polygon zkEVM, Linea, Scroll
+- Ethereum Request for Comments 20 (ERC-20) tokens: Thousands of fungible tokens deployed
+- Non-fungible token (NFT) market: Origin of the ERC-721 standard; largest NFT ecosystem
+- Layer 2 ecosystem: Arbitrum, Optimism, Base, zkSync, StarkNet, Polygon zero-knowledge Ethereum Virtual Machine (zkEVM), Linea, Scroll
 
 **Trilemma position:**
 Ethereum prioritizes **decentralization** and **security** while addressing scalability through Layer 2 rollups. Base-layer throughput remains ~15-30 TPS, but the combined throughput of Ethereum + its rollup ecosystem exceeds 200 TPS and is growing rapidly.
@@ -370,7 +370,7 @@ Solana's architecture incorporates eight key innovations designed for performanc
 | Turbine | Block propagation protocol (inspired by BitTorrent) |
 | Gulf Stream | Mempool-less transaction forwarding to validators |
 | Sealevel | Parallel smart contract runtime (processes non-conflicting transactions simultaneously) |
-| Pipelining | Transaction processing pipeline across hardware (CPU, GPU, network) |
+| Pipelining | Transaction processing pipeline across hardware (central processing unit (CPU), graphics processing unit (GPU), network) |
 | Cloudbreak | Horizontally-scaled account state database |
 | Archivers | Distributed ledger storage |
 
@@ -392,8 +392,8 @@ Solana's architecture incorporates eight key innovations designed for performanc
 *Hardware requirements:*
 Solana validators require high-end hardware to keep up with the network's throughput:
 - CPU: 16+ cores, 2.8+ GHz
-- RAM: 512 GB+
-- Storage: NVMe SSD, 2+ TB
+- Random-access memory (RAM): 512 GB+
+- Storage: Non-Volatile Memory Express (NVMe) solid-state drive (SSD), 2+ TB
 - Network: 1 Gbps (10 Gbps recommended)
 - Estimated cost: $5,000-$10,000+ per validator setup
 
@@ -404,7 +404,7 @@ Solana has experienced multiple network outages and performance degradations:
 
 | Date | Duration | Cause |
 |------|----------|-------|
-| Sep 2021 | ~17 hours | Resource exhaustion from bot activity on Raydium IDO |
+| Sep 2021 | ~17 hours | Resource exhaustion from bot activity on Raydium initial DEX offering (IDO) |
 | Jan 2022 | ~48 hours | Excessive duplicate transactions |
 | Apr-May 2022 | Multiple incidents | NFT minting bot congestion |
 | Feb 2023 | ~19 hours | Consensus issue triggered by a specific transaction |
@@ -480,9 +480,9 @@ Cardano prioritizes **decentralization** and **security** (through formal verifi
 
 **Architecture: Three built-in chains:**
 
-| Chain | Purpose | Consensus | VM |
+| Chain | Purpose | Consensus | Virtual machine (VM) |
 |-------|---------|-----------|-----|
-| **X-Chain** (Exchange Chain) | Asset creation and transfer (including AVAX) | Avalanche Consensus (DAG-based) | Avalanche VM (AVM) |
+| **X-Chain** (Exchange Chain) | Asset creation and transfer (including Avalanche (AVAX)) | Avalanche Consensus (DAG-based) | Avalanche VM (AVM) |
 | **C-Chain** (Contract Chain) | EVM-compatible smart contracts | Snowman Consensus (linear chain) | EVM (Solidity support) |
 | **P-Chain** (Platform Chain) | Validator coordination and subnet management | Snowman Consensus | Platform VM |
 
@@ -552,11 +552,11 @@ Avalanche targets a balance across all three properties: moderate **decentraliza
 
 **Consensus: Nominated Proof-of-Stake (NPoS) + BABE + GRANDPA**
 
-> **Definition: GRANDPA (GHOST-based Recursive ANcestor Deriving Prefix Agreement)**
+> **Definition: GHOST-based Recursive ANcestor Deriving Prefix Agreement (GRANDPA)**
 >
 > GRANDPA is Polkadot's finality gadget. Unlike protocols that finalize blocks one at a time, GRANDPA can finalize multiple blocks in a single round, making it very efficient at reaching finality even after network delays. GRANDPA provides deterministic finality once 2/3+ of validators agree.
 
-- **BABE** (Blind Assignment for Blockchain Extension): Block production protocol that selects validators using a VRF
+- **Blind Assignment for Blockchain Extension (BABE):** Block production protocol that selects validators using a VRF
 - **GRANDPA:** Finality gadget that finalizes chains of blocks
 - Block time: 6 seconds
 - Finality: ~12-60 seconds (GRANDPA can finalize many blocks at once)
@@ -581,7 +581,7 @@ Avalanche targets a balance across all three properties: moderate **decentraliza
 
 **Tradeoffs:**
 - Parachain slot scarcity: limited number of slots historically allocated through auctions (shifting to "coretime" sales)
-- Relay Chain itself does not support smart contracts — all dApp logic lives on parachains
+- Relay Chain itself does not support smart contracts — all decentralized application (dApp) logic lives on parachains
 - Ecosystem fragmentation: liquidity and users are split across parachains
 - Smaller DeFi ecosystem than Ethereum or Solana
 
@@ -692,10 +692,10 @@ The following table provides a side-by-side comparison of the six platforms anal
 | **Finality Type** | Deterministic | Optimistic/Probabilistic | Probabilistic | Probabilistic (high confidence) | Deterministic | Deterministic |
 | **Validators** | ~1,000,000+ | ~1,800 | ~3,200 pools | ~1,400 | ~300 (Relay) | 180 |
 | **Nakamoto Coefficient** | ~2-3 (Lido concern) | ~19-31 | ~24 | ~26 | ~7 | ~7 |
-| **Min. Validator Stake** | 32 ETH (~$60K) | ~1 SOL (economically ~50K+ SOL needed) | ~500K ADA effectively | 2,000 AVAX | Variable (NPoS) | Top 180 by stake |
+| **Min. Validator Stake** | 32 ETH (~$60K) | ~1 Solana (SOL; economically ~50K+ SOL needed) | ~500K ADA effectively | 2,000 AVAX | Variable (NPoS) | Top 180 by stake |
 | **Min. Hardware Cost** | ~$500-$1,000 | ~$5,000-$10,000 | ~$500-$1,000 | ~$2,000-$4,000 | ~$1,000-$3,000 | ~$1,000-$2,000 |
 | **Avg. Tx Fee** | $1-$10 (L1) | ~$0.00025 | ~$0.15-$0.30 | ~$0.01-$0.10 | ~$0.01-$0.10 | ~$0.01 |
-| **Native Token** | ETH | SOL | ADA | AVAX | DOT | ATOM |
+| **Native Token** | ETH | SOL | ADA | AVAX | Polkadot (DOT) | ATOM |
 | **DeFi TVL** | ~$50-60B | ~$5-8B | ~$200-500M | ~$800M-$1.5B | ~$300-800M | ~$500M-$1B |
 | **Smart Contract Language** | Solidity, Vyper | Rust, C | Plutus (Haskell), Aiken | Solidity (EVM) | Rust (ink!), varies by parachain | Go (Cosmos SDK), Rust (CosmWasm) |
 | **Ledger Model** | Account | Account | EUTXO | Account (EVM) | Account | Account |
@@ -783,7 +783,7 @@ Every blockchain must perform four core functions:
 > Celestia is a modular blockchain designed exclusively for data availability and consensus. It does not execute transactions or run smart contracts. Instead, it provides a highly scalable, trust-minimized data availability layer that rollups and other execution layers can publish their data to. Celestia uses Data Availability Sampling (DAS) to allow light nodes to verify data availability without downloading entire blocks.
 
 **Data Availability Sampling (DAS):**
-- Blocks are encoded using erasure coding (redundancy similar to RAID in storage systems)
+- Blocks are encoded using erasure coding (redundancy similar to redundant array of independent disks (RAID) in storage systems)
 - Light nodes sample random portions of the encoded block
 - If enough random samples are successfully retrieved, the full block data is available with high probability
 - This allows light nodes to verify DA with sub-linear bandwidth (do not need to download the full block)
@@ -876,7 +876,7 @@ Bridges have been the single largest source of losses in cryptocurrency history.
 
 **How an HTLC-based atomic swap works:**
 
-1. Alice wants to trade 1 BTC for 50 ETH with Bob
+1. Alice wants to trade 1 bitcoin (BTC) for 50 ETH with Bob
 2. Alice generates a random secret `S` and computes its hash `H(S)`
 3. Alice creates an HTLC on Bitcoin: "Bob can claim 1 BTC by revealing preimage of H(S) within 24 hours; otherwise, Alice reclaims"
 4. Bob sees Alice's HTLC and creates a corresponding HTLC on Ethereum: "Alice can claim 50 ETH by revealing preimage of H(S) within 12 hours; otherwise, Bob reclaims"
@@ -929,7 +929,7 @@ The Inter-Blockchain Communication (IBC) protocol, covered in Section 5.3.6, rep
 | IBC | Light client verification (trust-minimized) | 100+ (primarily Cosmos ecosystem) | Tokens, accounts, queries, arbitrary data | High (production since 2021) |
 | LayerZero | Configurable DVNs (application-chosen) | 50+ (EVM + non-EVM) | Arbitrary messages, OFT tokens | Moderate (V2 in production) |
 | Axelar | Validator-verified (Axelar's own validator set) | 50+ (EVM + Cosmos) | General Message Passing, token transfers | Moderate (production since 2022) |
-| Native Rollup Bridges | Ethereum L1 consensus (fraud/validity proofs) | Ethereum L1 ↔ specific L2 | Tokens and messages | High (tied to rollup maturity) |
+| Native Rollup Bridges | Ethereum L1 consensus (fraud/validity proofs) | Ethereum L1 ↔ specific Layer 2 (L2) | Tokens and messages | High (tied to rollup maturity) |
 | Wormhole | Guardian multisig (19 guardians) | 30+ chains | Token transfers, messages | Moderate (post-exploit upgrades) |
 
 ---
@@ -1053,7 +1053,7 @@ The hardware required to run a full validator node is a practical measure of dec
 
 | Platform | CPU | RAM | Storage | Network | Estimated Cost |
 |----------|-----|-----|---------|---------|---------------|
-| Bitcoin (full node) | 4+ cores | 8 GB | 1 TB HDD | 50 Mbps | ~$300-$500 |
+| Bitcoin (full node) | 4+ cores | 8 GB | 1 TB hard disk drive (HDD) | 50 Mbps | ~$300-$500 |
 | Ethereum (validator) | 4+ cores | 16 GB | 2 TB SSD | 25 Mbps | ~$500-$1,000 |
 | Solana (validator) | 16+ cores | 512 GB | 2 TB NVMe | 1 Gbps | ~$5,000-$10,000 |
 | Cardano (stake pool) | 4+ cores | 24 GB | 200 GB SSD | 10 Mbps | ~$500-$1,000 |
@@ -1140,7 +1140,7 @@ The following notebooks provide hands-on implementations of concepts covered in 
 
 3. **Nakamoto coefficient calculator (notebook 11):** Using real-world validator stake data from at least three platforms, compute the Nakamoto coefficient and Gini coefficient. Visualize stake distribution with Lorenz curves.
 
-4. **TPS analysis (notebook 12):** Fetch historical block data from Ethereum and Solana (using public APIs or datasets). Calculate actual TPS over time, separating Solana's vote transactions from non-vote transactions. Compare the "honest TPS" of each platform.
+4. **TPS analysis (notebook 12):** Fetch historical block data from Ethereum and Solana (using public application programming interfaces (APIs) or datasets). Calculate actual TPS over time, separating Solana's vote transactions from non-vote transactions. Compare the "honest TPS" of each platform.
 
 5. **Finality time comparison (notebook 12):** Build a simulation that models probabilistic finality (PoW) vs deterministic finality (BFT). For PoW, plot the reversal probability as a function of confirmations and attacker hash share. For BFT, model the impact of network latency on finality time.
 
